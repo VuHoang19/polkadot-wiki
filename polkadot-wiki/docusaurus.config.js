@@ -1,5 +1,4 @@
 const { baseUrlPattern } = require('../scripts/utils');
-const { injectPlugin } = require('../scripts/injectPlugin');
 const i18n = require('./i18n');
 
 const isBuilding = process.env.BUILDING === 'true';
@@ -57,7 +56,6 @@ module.exports = {
           showLastUpdateTime: true,
           sidebarPath: require.resolve('./sidebars.js'),
           routeBasePath: 'docs',
-          remarkPlugins: [injectPlugin({ isPolkadot: true })],
         },
         theme: {
           customCss: [
