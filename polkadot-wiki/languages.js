@@ -167,7 +167,7 @@ const languages = [
     tag: "uk",
   },
   {
-    enabled: false,
+    enabled: true,
     name: "Tiếng Việt",
     tag: "vi",
   },

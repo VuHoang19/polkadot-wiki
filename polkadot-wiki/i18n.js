@@ -1,6 +1,6 @@
 const defaultLocale = "en";
 
-const locales = ["en", "zh-CN", "ru-RU"];
+const locales = ["en", "zh-CN", "ru-RU", "vi-VN"];
 
 const localeConfigs = {
   en: {
@@ -11,6 +11,9 @@ const localeConfigs = {
   },
   "zh-CN": {
     label: "中文",
+  },
+  "vi-VN": {
+    label: "Vietnamese",
   },
 };
 
