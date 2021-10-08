@@ -1,1 +1,1 @@
-web: cross-env PUBLISHING=true docusaurus deploy polkadot-wiki
+web: yarn upgrade @docusaurus/core@latest @docusaurus/preset-classic@latest && yarn polkadot:start
