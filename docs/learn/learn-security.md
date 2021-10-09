@@ -6,77 +6,78 @@ description: Learn about pooled security and how it is maintained.
 slug: ../learn-security
 ---
 
-## Shared security
+## Bảo mật được chia sẻ
 
-Shared security, sometimes referred in documentation as _pooled security_, is one of the unique
-value propositions for chains considering to become a [parachain](learn-parachains.md) and join the
-Polkadot network. On a high level, shared security means that all parachains that are connected to
-the Polkadot Relay Chain by leasing a parachain slot will benefit from the economic security
-provided by the Relay Chain [validators](learn-validator.md).
+Bảo mật chia sẻ, đôi khi được gọi trong tài liệu là bảo mật tổng hợp, là một trong những đề xuất giá
+trị duy nhất cho các chuỗi đang cân nhắc trở thành [parachain](learn-parachains.md) và tham gia mạng
+Polkadot. Ở cấp độ cao, bảo mật được chia sẻ có nghĩa là tất cả các parachains được kết nối với
+Polkadot Relay Chain bằng cách cho thuê một slot parachain sẽ được hưởng lợi từ sự an toàn kinh tế
+được cung cấp bởi các trình xác thực ([validators](learn-validator.md)) Relay Chain.
 
-The notion of shared security is different from interchain protocols that build on an architecture
-of bridges. For bridge protocols, each chain is considered sovereign and must maintain its own
-validator set and economic security. One concern in these protocols is on the point of scalability
-of security. For example, one suggestion to scale blockchains is that of _scale by altcoins,_ which
-suggests that transaction volumes will filter down to lower market cap altcoins as the bigger ones
-fill their blocks. A major flaw in this idea is that the lower market cap coins will have less
-economic security attached, and be easier to attack. A real life example of a 51% attack occurred
-recently (
-[Ethereum Classic attack on January 10](https://cointelegraph.com/news/ethereum-classic-51-attack-the-reality-of-proof-of-work)
-), in which an unknown attacker double spent 219_500 ETC (~1.1 million USD). This was followed by
-two more 51% attacks on ETC.
+Khái niệm về bảo mật được chia sẻ khác với các giao thức interchain xây dựng dựa trên kiến ​​trúc
+của các cây cầu. Đối với các giao thức cầu nối, mỗi chuỗi được coi là có chủ quyền và phải duy trì
+bộ xác nhận và an ninh kinh tế của riêng nó. Một mối quan tâm trong các giao thức này là về khả năng
+mở rộng của bảo mật. Ví dụ: một gợi ý để mở rộng quy mô blockchain là mở rộng quy mô theo các
+altcoin, điều này cho thấy rằng khối lượng giao dịch sẽ lọc xuống các altcoin có vốn hóa thị trường
+thấp hơn khi các altcoin lớn hơn lấp đầy các khối của chúng. Một lỗ hổng lớn trong ý tưởng này là
+các đồng tiền vốn hóa thị trường thấp hơn sẽ có ít an toàn kinh tế hơn và dễ bị tấn công hơn. Một ví
+dụ thực tế về cuộc tấn công 51% đã xảy ra gần đây
+([Ethereum Classic attack on January 10](https://cointelegraph.com/news/ethereum-classic-51-attack-the-reality-of-proof-of-work)),
+trong đó một kẻ tấn công không xác định đã chi 219_500 ETC (~ 1,1 triệu USD). Tiếp theo là hai cuộc
+tấn công 51% nữa vào ETC.
 
-Polkadot overcomes security scalability concerns since it gravitates all the economic incentives to
-the Relay Chain and allows the parachains to tap into stronger guarantees at genesis. Sovereign
-chains must expend much more effort to grow the value of their coin so that it is not easily
-attackable by well-funded attackers.
+Polkadot khắc phục những lo ngại về khả năng mở rộng bảo mật vì nó thu hút tất cả các động lực kinh
+tế cho Relay chain và cho phép các parachains tận dụng các đảm bảo mạnh mẽ hơn ngay từ đầu. Các
+chuỗi chủ quyền phải dành nhiều nỗ lực hơn nữa để tăng giá trị của đồng tiền của họ để nó không dễ
+dàng bị tấn công bởi những kẻ tấn công được tài trợ tốt.
 
-### Example
+### Ví dụ
 
-Let's compare the standard sovereign security model that exists on current proof-of-work (PoW)
-chains to that of the shared security of Polkadot. Chains that are secured by their own security
-model like Bitcoin, Zcash, Ethereum, and their derivatives all must bootstrap their own independent
-network of miners and maintain a competitive portion of honest hashing power. Since mining is
-becoming a larger industry that increasingly centralizes on key players, it is becoming more real
-that a single actor may control enough hash power to attack a chain.
+Hãy so sánh mô hình bảo mật có chủ quyền tiêu chuẩn tồn tại trên các chuỗi bằng chứng công việc
+(PoW) hiện tại với mô hình bảo mật được chia sẻ của Polkadot. Các chuỗi được bảo mật bằng mô hình
+bảo mật của riêng họ như Bitcoin, Zcash, Ethereum và các dẫn xuất của chúng, tất cả đều phải khởi
+động mạng lưới thợ đào độc lập của riêng họ và duy trì một phần cạnh tranh của sức mạnh băm trung
+thực. Vì khai thác đang trở thành một ngành công nghiệp lớn hơn ngày càng tập trung vào những người
+chơi chính, việc một tác nhân duy nhất có thể kiểm soát đủ sức mạnh băm để tấn công một chuỗi ngày
+càng trở nên thực tế hơn.
 
-This means that smaller chains that cannot maintain a secure amount of hash power on their networks
-could potentially be attacked by a large mining cartel at the simple whim of redirecting its hash
-power away from Bitcoin and toward a new and less secure chain.
-[51% attacks are viable today](https://www.crypto51.app) with attacks having been reported on
-Ethereum Classic (see above),
+Điều này có nghĩa là các chuỗi nhỏ hơn không thể duy trì lượng băm an toàn trên mạng của họ có thể
+có khả năng bị tấn công bởi một nhóm khai thác lớn với ý thích đơn giản là chuyển hướng sức mạnh băm
+của nó khỏi Bitcoin và sang một chuỗi mới và kém an toàn hơn.
+[Các cuộc tấn công 51% có thể xảy ra ngày nay](https://www.crypto51.app) với các cuộc tấn công đã
+được báo cáo trên Ethereum Classic (xem ở trên),
 [Verge](https://coincentral.com/verge-suffers-51-attack-hard-forks-in-response/),
-[Bitcoin Gold](https://bitcoingold.org/responding-to-attacks/), and other cryptocurrencies.
+[Bitcoin Gold](https://bitcoingold.org/responding-to-attacks/), và các loại tiền điện tử khác.
 
-On Polkadot, this disparity between chain security will not be present. When a parachain connects to
-Polkadot, the Relay Chain validator set become the securers of that parachain's state transitions.
-The parachain will only have the overhead of needing to run a few collator nodes to keep the
-validators informed with the latest state transitions and proofs/witness. Validators will then check
-these for the parachains to which they are assigned. In this way, new parachains instantly benefit
-from the overall security of Polkadot even if they have just been launched.
+Trên Polkadot, sự chênh lệch này giữa bảo mật chuỗi sẽ không có. Khi một parachain kết nối với
+Polkadot, bộ xác thực Relay sẽ trở thành bộ bảo mật cho quá trình chuyển đổi trạng thái của
+parachain đó. Parachain sẽ chỉ có nhu cầu chạy một vài nút đối chiếu để giữ cho trình xác thực được
+thông báo với các chuyển đổi trạng thái mới nhất và bằng chứng / nhân chứng. Sau đó, trình xác thực
+sẽ kiểm tra các parachains mà chúng được chỉ định. Bằng cách này, các parachains mới ngay lập tức
+được hưởng lợi từ tính bảo mật tổng thể của Polkadot ngay cả khi chúng vừa được khởi chạy.
 
 ## FAQ
 
-### Is security correlated to the number of validators? What about the number of parachains?
+### Bảo mật có tương quan với số lượng trình xác thực không? Còn số lượng parachains thì sao?
 
-Security is independent of the number of parachains that are connected to the Polkadot Relay Chain.
-The correlation of security and the number of validators exists as the higher number of validators
-will give the network stronger decentralization properties and make it harder to try to take down.
-However, the biggest indicator of the security of the network is the economic signal of the number
-of DOT that are bonded and staked. The greater the number of DOT staked by honest validators and
-nominators, the higher the minimum amount of DOT an attacker would need to acquire a validator slot.
+Bảo mật không phụ thuộc vào số lượng parachains được kết nối với Polkadot Relay Chain. Mối tương
+quan giữa bảo mật và số lượng trình xác thực tồn tại vì số lượng trình xác thực cao hơn sẽ cung cấp
+cho mạng các thuộc tính phân quyền mạnh hơn và khiến việc cố gắng gỡ bỏ khó khăn hơn. Tuy nhiên, chỉ
+số lớn nhất về tính bảo mật của mạng là tín hiệu kinh tế của số lượng DOT được liên kết và đặt cọc.
+Số lượng DOT được đặt bởi người xác nhận (validator) và người đề cử (nominators) trung thực càng
+lớn, thì số lượng DOT tối thiểu mà kẻ tấn công cần để có được vị trí xác thực càng cao.
 
-### Will parachains ever need their own security? In what scenarios do parachains need their own security?
+### Các parachains có bao giờ cần bảo mật của riêng họ không? Trong những trường hợp nào thì parachains cần bảo mật riêng?
 
-Most parachains will not need to worry about their own security, since all state transitions will be
-secured by the Polkadot Relay Chain validator set. However, in some cases (which are considered more
-experimental), parachains may require their own security. In general, these cases will revolve
-around lack of data available to Relay Chain validators.
+Hầu hết các parachains sẽ không cần phải lo lắng về bảo mật của chính họ, vì tất cả các chuyển đổi
+trạng thái sẽ được bảo mật bởi bộ xác thực Polkadot Relay Chain. Tuy nhiên, trong một số trường hợp
+(được coi là thử nghiệm hơn), parachains có thể yêu cầu bảo mật riêng của chúng. Nói chung, những
+trường hợp này sẽ xoay quanh việc thiếu dữ liệu có sẵn cho trình xác thực Relay chain.
 
-One example is if the state transition function is some succinct or zero-knowledge proof, the
-parachain would be responsible for keeping its data available as the Relay Chain won't have it.
-Additionally, for chains with their own consensus, like the one that enables fast payments on
-[Blink Network](https://www.youtube.com/watch?v=sf5GMDlG7Uk), there would probably need to be a
-Byzantine agreement between stakers before a parachain block is valid. The agreement would be
-necessary because the data associated with the fast consensus would be unknown to Relay Chain
-validators.
+Một ví dụ là nếu chức năng chuyển đổi trạng thái là một số bằng chứng ngắn gọn hoặc không có kiến
+thức, parachain sẽ chịu trách nhiệm giữ cho dữ liệu của nó có sẵn vì Relay chain sẽ không có nó.
+Ngoài ra, đối với các chuỗi có sự đồng thuận của riêng họ, chẳng hạn như chuỗi cho phép thanh toán
+nhanh trên [Blink Network](https://www.youtube.com/watch?v=sf5GMDlG7Uk), có lẽ sẽ cần phải có một
+thỏa thuận Byzantine giữa các nhà phân phối trước khi khối parachain có hiệu lực. Thỏa thuận sẽ là
+cần thiết vì dữ liệu liên quan đến sự đồng thuận nhanh chóng sẽ không được xác nhận đối với người
+xác nhận Relay chain.
