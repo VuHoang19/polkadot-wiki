@@ -6,92 +6,50 @@ description: Learn about the key components to Polkadot's Architecture.
 slug: ../learn-architecture
 ---
 
-Polkadot is a heterogeneous multichain with shared security and interoperability.
-
+Polkadot là một multichain không đồng nhất với khả năng tương tác và bảo mật được chia sẻ.
 # Components
 
-## Relay Chain
+## Relay chain
 
-The Relay Chain is the central chain of Polkadot. All validators of Polkadot are staked on the Relay
-Chain in DOT and validate for the Relay Chain. The Relay Chain is composed of a relatively small
-number of transaction types that include ways to interact with the governance mechanism, parachain
-auctions, and participating in NPoS. The Relay Chain has deliberately minimal functionality - for
-instance, smart contracts are not supported. The main responsibility is to coordinate the system as
-a whole, including parachains. Other specific work is delegated to the parachains, which have
-different implementations and features.
+Relay chain là chuỗi trung tâm của Polkadot. Tất cả các trình xác nhận (validator) của Polkadot đều được đặt trên Relay chain trong DOT và xác nhận cho Relay chain. Relay chain bao gồm một số lượng tương đối nhỏ các loại giao dịch bao gồm các cách tương tác với cơ chế quản trị, đấu giá parachain và tham gia vào NPoS. Relay chain có chức năng tối thiểu một cách cố ý - ví dụ: hợp đồng thông minh không được hỗ trợ. Trách nhiệm chính là điều phối toàn bộ hệ thống, bao gồm cả các parachains. Các công việc cụ thể khác được giao cho các parachains, có các cách triển khai và tính năng khác nhau.
 
 ## [Parachain](learn-parachains.md) and [Parathread](learn-parathreads.md) Slots
 
-Polkadot can support a number of execution slots. These slots are like cores on a computer's
-processor (a modern laptop's processor may have eight cores, for example). Each one of these cores
-can run one process at a time. Polkadot allows these slots using two subscription models: parachains
-and parathreads. Parachains have a dedicated slot (core) for their chain and are like a process that
-runs constantly. Parathreads share slots amongst a group, and are thus more like processes that need
-to be woken up and run less frequently.
+Polkadot có thể hỗ trợ một số slot thực thi. Các slot cắm này giống như các core trên bộ xử lý của máy tính (ví dụ: bộ xử lý của máy tính xách tay hiện đại có thể có tám core). Mỗi một trong những core này có thể chạy một quy trình tại một thời điểm. Polkadot cho phép các slot này sử dụng hai mô hình đăng ký: parachains và parathreads. Parachains có một slot cắm dành riêng (core) cho chuỗi của họ và giống như một quá trình chạy liên tục. Parathreads chia sẻ các vị trí giữa một nhóm và do đó giống như các quy trình cần được đánh thức và chạy ít thường xuyên hơn.
 
-Most of the computation that happens across the Polkadot network as a whole will be delegated to
-specific parachain or parathread implementations that handle various use cases. Polkadot places no
-constraints over what parachains can do besides that they must be able to generate a proof that can
-be validated by the validators assigned to the parachain. This proof verifies the state transition
-of the parachain. Some parachains may be specific to a particular application, others may focus on
-specific features like smart contracts, privacy, or scalability &mdash; still, others might be
-experimental architectures that are not necessarily blockchain in nature.
+Hầu hết việc tính toán xảy ra trên toàn bộ mạng Polkadot sẽ được ủy quyền cho các triển khai parachain hoặc parathread cụ thể xử lý các trường hợp sử dụng khác nhau. Polkadot không có ràng buộc nào đối với những gì parachains có thể làm ngoài việc chúng phải có khả năng tạo ra một bằng chứng có thể được xác thực bởi các trình xác thực được chỉ định cho parachain. Bằng chứng này xác minh sự chuyển đổi trạng thái của parachain. Một số parachains có thể dành riêng cho một ứng dụng cụ thể, những người khác có thể tập trung vào các tính năng cụ thể như hợp đồng thông minh, quyền riêng tư hoặc khả năng mở rộng &mdash; tuy nhiên, những người khác có thể là kiến ​​trúc thử nghiệm không nhất thiết phải là blockchain.
 
-Polkadot provides many ways to secure a slot for a parachain slot for a particular length of time.
-Parathreads are part of a pool that shares slots and must-win auctions for individual blocks.
-Parathreads and parachains have the same API; their difference is economic. Parachains will have to
-reserve DOT for the duration of their slot lease; parathreads will pay on a per-block basis.
-Parathreads can become parachains, and vice-versa.
+Polkadot cung cấp nhiều cách để đảm bảo vị trí cho một vị trí parachain trong một khoảng thời gian cụ thể. Parathreads là một phần của nhóm chia sẻ các vị trí và đấu giá phải thắng cho các khối riêng lẻ. Parathreads và parachains có cùng một API; sự khác biệt của họ là kinh tế. Parachains sẽ phải đặt trước DOT trong suốt thời gian thuê chỗ của họ; parathreads sẽ thanh toán trên cơ sở mỗi khối. Parathreads có thể trở thành parachains và ngược lại.
 
-### [Shared Security](learn-security.md)
+### [Bảo mật chia sẻ](learn-security.md)
 
-Parachains connected to the Polkadot Relay Chain all share in the security of the Relay Chain.
-Polkadot has a shared state between the Relay Chain and all of the connected parachains. If the
-Relay Chain must revert for any reason, then all of the parachains would also revert. This is to
-ensure that the validity of the entire system can persist and no individual part is corruptible.
+Các Parachains được kết nối với Relay chain Polkadot đều có chung quyền bảo mật với Relay chain. Polkadot có trạng thái được chia sẻ giữa Relay chain và tất cả các parachains được kết nối. Nếu Relay chain phải hoàn nguyên vì bất kỳ lý do gì, thì tất cả các chuỗi phân đoạn cũng sẽ hoàn nguyên. Điều này là để đảm bảo rằng hiệu lực của toàn bộ hệ thống có thể tồn tại và không có phần riêng lẻ nào bị hỏng.
 
-The shared state makes it so that the trust assumptions when using Polkadot parachains are only
-those of the Relay Chain validator set and no other. Since the validator set on the Relay Chain is
-expected to be secure with a large amount of stake put up to back it, parachains should benefit from
-this security.
+Trạng thái được chia sẻ làm cho các giả định tin cậy khi sử dụng các parachains Polkadot chỉ là các giả định của bộ xác thực Relay chain và không có giả định nào khác. Vì trình xác thực(validator) được đặt trên Relay chain dự kiến sẽ được bảo mật với một lượng lớn tiền đặt cọc để hỗ trợ nó, các parachains sẽ được hưởng lợi từ bảo mật này.
 
 ## [Bridges](learn-bridges.md)
+Blockchain [bridge](../general/glossary.md##bridge) là một kết nối cho phép truyền dữ liệu tùy ý từ mạng này sang mạng khác. Các chuỗi này có thể tương tác thông qua cầu nối nhưng có thể tồn tại dưới dạng các chuỗi độc lập với các giao thức, quy tắc và mô hình quản trị khác nhau. Trong Polkadot, các cầu nối với Relay chain và được bảo đảm thông qua cơ chế đồng thuận Polkadot, được duy trì bởi [collators](##collators).
 
-A blockchain [bridge](../general/glossary.md##bridge) is a connection that allows for arbitrary data to
-transfer from one network to another. These chains are interoperable through the bridge but can
-exist as standalone chains with different protocols, rules, and governance models. In Polkadot,
-bridges connect to the relay chain and are secured through the Polkadot consensus mechanism,
-maintained by [collators](##collators).
+Polkadot sử dụng các cầu nối để làm cầu nối cho tương lai của Web 3.0, vì các cầu nối là nền tảng cho kiến trúc tương thích của Polkadot bằng cách hoạt động như một kênh giao tiếp [an toàn và mạnh mẽ] cho các chuỗi riêng biệt.
 
-Polkadot uses bridges to bridge the future of Web 3.0, as bridges are fundamental to Polkadot's
-interoperable architecture by acting as a [secure and robust] communication channel for chains in
-isolation.
-
-# Main Actors
+# Những thành phần chính
 
 ## Validators
 
-[Validators](../general/glossary.md##validator), if elected to the validator set, produce blocks on the Relay
-Chain. They also accept proofs of valid state transition from collators. In return, they will
-receive staking rewards.
+[Validators](../general/glossary.md##validator), nếu được chọn vào tập hợp trình xác nhận, sẽ tạo ra các khối trên Relay chain. Họ cũng chấp nhận các bằng chứng về sự chuyển đổi trạng thái hợp lệ từ các máy đối chiếu (collators). Đổi lại, họ sẽ nhận được phần thưởng đặt cược.
 
 ## Nominators
 
-[Nominators](../general/glossary.md##nominator) bond their stake to particular validators in order to help them
-get into the active validator set and thus produce blocks for the chain. In return, nominators are
-generally rewarded with a portion of the staking rewards from that validator.
+[Nominators](../general/glossary.md##nominator)(người được để cử) liên kết cổ phần của họ với các trình xác thực cụ thể để giúp họ tham gia vào tập hợp trình xác thực đang hoạt động và do đó tạo ra các khối cho chuỗi. Đổi lại, những người được đề cử thường được thưởng bằng một phần phần thưởng đặt cược từ người xác nhận đó.
 
 ## Collators
 
-[Collators](../general/glossary.md##collator) are full nodes on both a parachain and the Relay Chain. They
-collect parachain transactions and produce state transition proofs for the validators on the Relay
-Chain. They can also send and receive messages from other parachains using XCMP.
+[Collators](../general/glossary.md##collator) là các full node trên cả parachain và Relay chain. Họ thu thập các giao dịch parachain và tạo ra các bằng chứng chuyển đổi trạng thái cho các trình xác thực trên Relay chain. Họ cũng có thể gửi và nhận tin nhắn từ các parachains khác bằng XCMP.
 
 ---
 
 ## Whiteboard Series
 
-For a video overview of the architecture of Polkadot watch the video below for the whiteboard
-interview with W3F researcher Alistair Stewart:
+Để có video tổng quan về kiến trúc của Polkadot, hãy xem video dưới đây về cuộc phỏng vấn bảng trắng với nhà nghiên cứu Alistair Stewart của W3F:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/xBfC6uTjvbM" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
