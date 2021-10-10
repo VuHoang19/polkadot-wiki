@@ -1,43 +1,44 @@
 ---
 id: getting-started
-title: Getting Started
+title: Bắt đầu
 sidebar_label: Getting Started
 description: Get started with Polkadot.
 slug: ../getting-started
 ---
 
-Welcome to the Polkadot Wiki! This central source of truth contains guides for interacting with the
-core functionality. Our wiki has three main sections: Learn (for learners), Build (for people that
-want to build on Polkadot), and Maintain (for people that want to maintain the network).
+Chào mừng đến với Polkadot Wiki! Tài liệu đáng tin cậy này chứa các hướng dẫn để tương tác với chức
+năng cốt lõi. Wiki của chúng tôi có ba phần chính: Tìm hiểu (dành cho người học), Xây dựng (dành cho
+những người muốn xây dựng trên Polkadot) và Duy trì (dành cho những người muốn duy trì mạng).
 
-## What is Polkadot?
+## Polkadot là gì?
 
-Polkadot enables scalability by allowing specialized blockchains to communicate with each other in a
-secure, trust-free environment.
+Polkadot cho phép khả năng mở rộng bằng cách cho phép các blockchains chuyên biệt giao tiếp với nhau
+trong một môi trường an toàn và trust-free.
 
-Polkadot is built to connect and secure unique blockchains, whether they be public, permission-less
-networks, private consortium chains, or oracles and other Web3 technologies. It enables an internet
-where independent blockchains can exchange information under common security guarantees.
+Polkadot được xây dựng để kết nối và bảo mật các blockchains duy nhất, cho dù chúng là mạng công
+khai, mạng không cho phép, chuỗi liên minh tư nhân hay oracles và các công nghệ Web3 khác. Nó cho
+phép một mạng internet nơi các blockchains độc lập có thể trao đổi thông tin theo các đảm bảo an
+ninh chung.
 
-Polkadot is a living network with the core pillars of governance and upgradability. The network has
-an advanced suite of governance tools and, using the [WebAssembly](https://webassembly.org/)
-standard as a "meta-protocol", can autonomously deploy network upgrades. Polkadot adapts to your
-growing needs without the risks of network forks.
+Polkadot là một mạng lưới sống động với các trụ cột cốt lõi là quản trị và khả năng nâng cấp. Mạng
+có một bộ công cụ quản trị tiên tiến và sử dụng tiêu chuẩn [WebAssembly](https://webassembly.org/)
+như một "giao thức siêu", có thể tự động triển khai nâng cấp mạng. Polkadot thích ứng với nhu cầu
+ngày càng tăng của bạn mà không gặp rủi ro về các nhánh mạng.
 
-> Note: If you haven't heard of Governance before, a great place to start is the
+> Note: Nếu bạn chưa từng nghe nói về Govermant trước đây, một nơi tuyệt vời để bắt đầu
 > [Governance page](../learn/learn-governance.md)
 
-By connecting these dots, Polkadot serves as a foundational part of a decentralized web, where users
-control their data and are not limited by trust bounds within the network.
+Bằng cách kết nối các điểm này, Polkadot đóng vai trò như một phần nền tảng của web phi tập trung,
+nơi người dùng kiểm soát dữ liệu của họ và không bị giới hạn bởi giới hạn tin cậy trong mạng.
 
-### Interact with Polkadot
+### Tương tác với Polkadot
 
 <tr class="cards-container">
   <td>
     <a class="guide-link" href="../docs/learn-account-generation">
       <img src="/img/polkadot-guide/Account.png" alt="Drawing" width="250" height="150"/>
         <div class="cards-body">
-            <h5 class="cards-title">Creating an Account</h5>
+            <h5 class="cards-title">Tạo một tài khoản</h5>
         </div>
     </a>
   </td>
@@ -45,7 +46,7 @@ control their data and are not limited by trust bounds within the network.
     <a class="guide-link" href="../docs/learn-balance-transfers">
       <img src="/img/polkadot-guide/Transfer.png" alt="Drawing" width="250" height="150"/>
         <div class="cards-body">
-            <h5 class="cards-title">Balance Transfers</h5>
+            <h5 class="cards-title">Chuyển tiền</h5>
         </div>
     </a>
   </td>
@@ -82,7 +83,7 @@ control their data and are not limited by trust bounds within the network.
     <a class="guide-link" href="../docs/maintain-guides-how-to-vote-councillor">
       <img class="guide-image" src="/img/polkadot-guide/Voting.png" alt="Drawing" width="250" height="150"/>
               <div class="cards-body">
-                  <h5 class="cards-title">Vote for Councilors</h5>
+                  <h5 class="cards-title">Bỏ phiếu cho các ủy viên hội đồng</h5>
               </div>
     </a>
   </td>
@@ -95,7 +96,7 @@ control their data and are not limited by trust bounds within the network.
   <a class="guide-link" href="../docs/learn-treasury#creating-the-proposal">
     <img class="guide-image" src="/img/polkadot-guide/Proposal.png" alt="Drawing" width="250" height="150"/>
             <div class="cards-body">
-                <h5 class="cards-title">Make Proposals</h5>
+                <h5 class="cards-title">Đưa ra đề xuất</h5>
             </div>
   </a>
   </td>
@@ -103,7 +104,7 @@ control their data and are not limited by trust bounds within the network.
     <a class="guide-link" href="../docs/maintain-guides-how-to-join-council#submit-candidacy">  
       <img class="guide-image" src="/img/polkadot-guide/Council.png" alt="Drawing" width="250" height="150"/>
               <div class="cards-body">
-                  <h5 class="cards-title">Council Candidacy</h5>
+                  <h5 class="cards-title">Ứng cử viên Hội đồng</h5>
               </div>
     </a>
   </td>
@@ -111,7 +112,7 @@ control their data and are not limited by trust bounds within the network.
     <a class="guide-link" href="../docs/learn-treasury">  
       <img class="guide-image" src="/img/polkadot-guide/Treasury.png" alt="Drawing" width="250" height="150"/>
               <div class="cards-body">
-                  <h5 class="cards-title">Treasury</h5>
+                  <h5 class="cards-title">Kho bạc</h5>
               </div>
     </a>
   </td>
@@ -124,7 +125,7 @@ control their data and are not limited by trust bounds within the network.
     <a class="guide-link" href="../docs/learn-identity">
       <img class="guide-image" src="/img/polkadot-guide/Identity.png" alt="Drawing" width="250" height="150"/>
               <div class="cards-body">
-                 <h5 class="cards-title">Set an Identity</h5>
+                 <h5 class="cards-title">Đặt danh tính</h5>
               </div>
     </a>
   </td>
@@ -132,7 +133,7 @@ control their data and are not limited by trust bounds within the network.
     <a class="guide-link" href="../docs/learn-proxies">
       <img class="guide-image" src="/img/polkadot-guide/Proxy.png" alt="Drawing" width="250" height="150"/>
               <div class="cards-body">
-                  <h5 class="cards-title">Proxy Accounts</h5>
+                  <h5 class="cards-title">Tài khoản proxy</h5>
               </div>
     </a>
   </td>
@@ -140,7 +141,7 @@ control their data and are not limited by trust bounds within the network.
   <a class="guide-link" href="../docs/ambassadors">  
     <img class="guide-image" src="/img/polkadot-guide/Ambassadors.png" alt="Drawing" width="250" height="150"/>
             <div class="cards-body">
-                <h5 class="cards-title">Become an Ambassador</h5>
+                <h5 class="cards-title">Trở thành đại sứ</h5>
             </div>
   </a>
   </td>
@@ -148,122 +149,123 @@ control their data and are not limited by trust bounds within the network.
 
 <br />
 
-## Why Polkadot?
+## Tại sao là Polkadot?
 
-Back in the early 2000's, when the internet was gaining popularity for the first time, the internet
-featured read-only, static, basic webpages. The online connected world at the time was only the
-beginning of virtual data, identities, and more. The internet during this time was also called the
-Web 1.0.
+Quay trở lại đầu những năm 2000, khi lần đầu tiên internet trở nên phổ biến, internet có các trang
+web cơ bản, chỉ đọc, tĩnh. Thế giới kết nối trực tuyến vào thời điểm đó chỉ là sự khởi đầu của dữ
+liệu ảo, danh tính và hơn thế nữa. Internet trong thời gian này còn được gọi là Web 1.0.
 
-As social media platforms and online businesses began to emerge, the internet transformed into the
-Web 2.0. This upgraded internet, which we still use today, features dynamic, interactive webpages,
-where users can read and write information plus publish their own for others to see. However, this
-version of the web comes with downsides, dealing with data control, privacy issues, and trust. This
-is where the Web 3.0 comes into the picture.
+Khi các nền tảng truyền thông xã hội và các doanh nghiệp trực tuyến bắt đầu xuất hiện, internet
+chuyển đổi thành Web 2.0. Internet được nâng cấp này, mà chúng ta vẫn sử dụng ngày nay, có các trang
+web động, tương tác, nơi người dùng có thể đọc và viết thông tin đồng thời xuất bản thông tin của
+riêng họ cho người khác xem. Tuy nhiên, phiên bản web này có những nhược điểm, liên quan đến kiểm
+soát dữ liệu, các vấn đề về quyền riêng tư và sự tin cậy. Đây là lúc Web 3.0 xuất hiện.
 
-The Web 3.0 is taking centralized applications and turning them into decentralized, trust-free
-protocols. The goal is to transform the internet into a decentralized web, where users control their
-own data and identity in a trust-free environment. The Web 3.0 movement aims to remove
-intermediaries and build a trustless infrastructure.
+Web 3.0 đang sử dụng các ứng dụng tập trung và biến chúng thành các giao thức phi tập trung,
+trust-free. Mục tiêu là chuyển đổi internet thành một web phi tập trung, nơi người dùng kiểm soát dữ
+liệu và danh tính của riêng họ trong một môi trường trust-free. Phong trào Web 3.0 nhằm mục đích
+loại bỏ các bên trung gian và xây dựng một cơ sở hạ tầng không đáng tin cậy (hệ thống mà trong đó
+không cần sự tin cậy giữa các bên để nó hoạt động).
 
-> To learn more of the Web3 movement, check out this video from the
+> Để tìm hiểu thêm về phong trào Web3, hãy xem video này từ
 > [Web3 Summit](https://youtu.be/l44z35vabvA)
 
-## How does Polkadot work?
+## Polkadot hoạt động như thế nào?
 
-The Polkadot network uses a
-[sharded model](<https://en.wikipedia.org/wiki/Shard_(database_architecture)>) where shards - called
-"[parachains](../learn/learn-parachains.md)", allow transactions to be processed in parallel instead of
-sequentially. Each parachain in the network has a unique state transition function (STF). Polkadot
-has a Relay Chain acting as the main chain of the system. Based on Polkadot's design, as long as a
-chain's logic can compile to Wasm and adheres to the Relay Chain API, then it can connect to the
-Polkadot network as a parachain.
+Mạng Polkadot sử dụng [sharded model](<https://en.wikipedia.org/wiki/Shard_(database_architecture)>)
+trong đó shards - được gọi là "[parachains](../learn/learn-parachains.md)",cho phép các giao dịch
+được xử lý song song thay vì tuần tự. Mỗi parachain trong mạng có một chức năng chuyển đổi trạng
+thái (state transition funtion - STF) duy nhất. Polkadot có Relay chain hoạt động như chuỗi chính
+của hệ thống. Dựa trên thiết kế của Polkadot, miễn là logic của chuỗi có thể biên dịch thành Wasm và
+tuân theo Relay chain API, thì nó có thể kết nối với mạng Polkadot dưới dạng parachain.
 
-Parachains construct and propose blocks to validators on the Relay Chain, where the blocks undergo
-rigorous [availability and validity](../learn/learn-availability.md) checks before being added to the
-finalized chain. As the Relay Chain provides the security guarantees,
-[collators](../learn/learn-collator.md) - full nodes of these parachains - don't have any security
-responsibilities, and thus do not require a robust incentive system. This is how the entire network
-stays up to date with the many transactions that take place.
+Parachains xây dựng và đề xuất các khối cho validators trên Relay Chain, nơi các khối phải trải qua
+các đợt kiểm tra [tính khả dụng và tính hợp lệ (../learn/learn-availability.md) nghiêm ngặt trước
+khi được thêm vào chuỗi đã hoàn thiện. Vì Relay chain cung cấp các đảm bảo bảo mật,
+[các trình đối chiếu (collators)](../learn/learn-collator.md)- các nút đầy đủ của parachain này -
+không có bất kỳ trách nhiệm bảo mật nào và do đó không yêu cầu một hệ thống mạnh mẽ. Đây là cách
+toàn bộ mạng luôn cập nhật với nhiều giao dịch diễn ra.
 
 ![polkadot-relay-chain](../assets/polkadot_relay_chain.png)
 
-In order to interact with chains that want to use their own finalization process (e.g. Bitcoin),
-Polkadot has [bridge parachains](../learn/learn-bridges.md) that offer two-way compatibility, meaning that
-transactions can be made between different parachains.
+Để tương tác với các chuỗi muốn sử dụng quy trình hoàn thiện của riêng họ (ví dụ: Bitcoin), Polkadot
+có các [parachains cầu nối (bridge parachains)](../learn/learn-bridges.md) cung cấp khả năng tương
+thích hai chiều, có nghĩa là các giao dịch có thể được thực hiện giữa các parachains khác nhau.
 
-The [Cross-Consensus Messaging Format (XCM)](../learn/learn-cross-consensus.md) allows parachains to send messages
-of any type to each other. The shared security and validation logic of the Relay Chain provide the
-environment for trust-free message passing that opens up true interoperability.
+[Định dạng nhắn tin đồng thuận chéo (Cross-Consensus Messaging Format -XCM)](../learn/learn-cross-consensus.md)
+cho phép các parachains gửi tin nhắn thuộc bất kỳ loại nào cho nhau. Logic xác thực và bảo mật được
+chia sẻ của Chuỗi chuyển tiếp (Relay chain) cung cấp môi trường để truyền thông điệp trust-free, mở
+ra khả năng tương tác thực sự
 
-> To watch a short, beginner-friendly animation on Polkadot, check out our
+> Để hiểu một cách ngắn gọn bằng animation hãy xem
 > [Polkadot Explainer video](https://www.youtube.com/watch?v=_-k0xkooSlA)
 
-## Why should you use Polkadot?
+## Tại sao bạn nên sử dụng Polkadot?
 
-Whether you're a blockchain developer or if you're interested in taking part of
-[Polkadot's community](https://polkadot.network/polkadot-ambassador-program/), Polkadot offers a
-platform for everyone. This wiki offers a place for builders and maintainers to utilize
-[tools](../build/build-tools-index.md) and for brand-new learners to dive into educational material.
+Cho dù bạn là nhà phát triển blockchain hay bạn quan tâm đến việc tham gia vào
+[cộng đồng của Polkadot](https://polkadot.network/polkadot-ambassador-program/), Polkadot cung cấp
+một nền tảng cho tất cả mọi người. Wiki này cung cấp một nơi cho các nhà xây dựng và bảo trì sử dụng
+các [công cụ ](../build/build-tools-index.md) và cho những người học mới bắt đầu tìm hiểu tài liệu
+giáo dục.
 
-# Getting Started
+# Bắt đầu
 
-For brand-new learners of Blockchain technology:
+Đối với những người mới học về công nghệ Blockchain:
 
-- The [Blockchain Fundamentals MOOC course][mooc] is a great introduction to start familiarizing
-  yourself with blockchain concepts such as cryptography and networks, and how these play into
-  things like decentralization and cryptocurrency.
+- [Blockchain Fundamentals MOOC course][mooc]là một phần giới thiệu tuyệt vời để bắt đầu tự làm quen
+  với các khái niệm blockchain như mật mã và mạng, cũng như cách các khái niệm này hoạt động thành
+  những thứ như phân quyền và tiền điện tử.
 
-This is recommended for users with backgrounds of all levels, and the course is free!
+Tài liệu này giới thiệu cho người dùng có nền tảng ở mọi cấp độ và khóa học này miễn phí!
 
-## Brand-New Polkadot learners:
+## Những người học Polkadot hoàn toàn mới:
 
-- [Polkadot's original white paper][white-paper] is a technical summary around one possible
-  direction of implementing the Polkadot network. This paper uses rationale and technical details to
-  support why this direction is beneficial. This original white paper also explains how Polkadot's
-  core components work together to build this decentralized network.
-- [Polkadot's overview paper][overview-paper] is an updated version of the white paper that
-  describes the protocol in more technical terms. We would recommend reading this overview paper if
-  you are interested in digging more into the protocol itself.
-- [Polkadot's light paper][light-paper] is a visual, easy to read, and less technical introduction
-  into its blockchain technology. This paper dives into the components of Polkadot but is
-  understandable for both a non-technical and technical reader.
-- [Polkadot's specification][spec] is a Github repository that holds the latest Polkadot Host
-  protocol specification, Polkadot's specification tests of the many components of the network, and
-  the Polkadot Runtime specification. This repo holds algorithms and explores how various processes
-  function in the Polkadot network. The Polkadot specification takes Polkadot's ideas and concepts
-  from the light and the white paper but focuses on the technical specs of the technology.
-- [Watching the Technical Explainer Videos][teched videos]: These are great introductory videos that
-  explain and demonstrate how to use Polkadot and its [User Interface][ui].
-- Reading [What is Polkadot? A Brief Introduction][article] on Medium. There are also other great
-  articles to read on [Polkadot's Medium][p medium] or [Web3 Foundation's Medium][w medium].
+- [Polkadot's original white paper][white-paper] là một bản tóm tắt kỹ thuật xoay quanh một hướng
+  khả thi của việc triển khai mạng Polkadot. Bài báo này sử dụng cơ sở lý luận và các chi tiết kỹ
+  thuật để hỗ trợ lý do tại sao hướng này lại có lợi. Sách trắng ban đầu này cũng giải thích cách
+  các thành phần cốt lõi của Polkadot hoạt động cùng nhau để xây dựng mạng phi tập trung này.
+- [Polkadot's overview paper][overview-paper] là phiên bản cập nhật của sách trắng mô tả giao thức
+  theo các thuật ngữ kỹ thuật hơn. Chúng tôi khuyên bạn nên đọc bài báo tổng quan này nếu bạn muốn
+  tìm hiểu sâu hơn về chính giao thức.
+- [Polkadot's light paper][light-paper] là một phần giới thiệu trực quan, dễ đọc và ít kỹ thuật hơn
+  về công nghệ blockchain của nó. Bài báo này đi sâu vào các thành phần của Polkadot nhưng có thể
+  hiểu được đối với cả người đọc không chuyên về kỹ thuật và kỹ thuật.
+- [Polkadot's specification][spec] là một Github Repository chứa thông số kỹ thuật giao thức
+  Polkadot Host mới nhất, kiểm tra đặc điểm kỹ thuật của Polkadot đối với nhiều thành phần của mạng
+  và thông số kỹ thuật Polkadot Runtime. Kho lưu trữ này lưu giữ các thuật toán và khám phá cách các
+  quy trình khác nhau hoạt động trong mạng Polkadot. Đặc điểm kỹ thuật của Polkadot lấy ý tưởng và
+  khái niệm của Polkadot và sách trắng nhưng tập trung vào thông số kỹ thuật của công nghệ.
+- [Watching the Technical Explainer Videos][teched videos]: Đây là những video giới thiệu tuyệt vời
+  giải thích và chứng minh cách sử dụng Polkadot và [User Interface][ui].
+- Đọc [What is Polkadot? A Brief Introduction][article] trên Medium. TNgoài ra còn có các bài viết
+  hay khác để đọc tiếp [Polkadot's Medium][p medium] hay [Web3 Foundation's Medium][w medium].
 
-For brand-new learners of Kusama, Polkadot's canary cousin network: To learn more about how to build
-and maintain on the Kusama network, please head over to our [Kusama Guide][kusama guide].
+Đối với những người mới học về Kusama, mạng anh em của Polkadot: Để tìm hiểu thêm về cách xây dựng
+và duy trì trên mạng Kusama, vui lòng truy cập[Kusama Guide][kusama guide].
 
 ## Resources
 
-- [Polkadot Crowdcast](https://www.crowdcast.io/polkadot) - List of all Crowdcast webinars that the
-  Web3 Foundation has done.
-- [Polkadot Explorer](https://polkadot.js.org/apps/#/explorer) - Browser for the Polkadot network;
-  can be used for Polkadot, Kusama, or any Substrate-based chain.
-- [Polkascan](http://polkascan.io/) \- Real-time multi-chain data for Polkadot Relay Chain and
-  Parity Substrate chains.
-- [Subscan.io](https://subscan.io) - Explorer for Substrate based chains.
-- [Polkadot Overview](https://youtu.be/lIghiCmHz0U) - Dr. Gavin Wood presents an overview of
+- [Polkadot Crowdcast](https://www.crowdcast.io/polkadot) - Danh sách tất cả các hội thảo trên web
+  Crowdcast mà Web3 Foundation đã thực hiện.
+- [Polkadot Explorer](https://polkadot.js.org/apps/#/explorer) - Trình duyệt cho mạng Polkadot; có
+  thể được sử dụng cho Polkadot, Kusama hoặc bất kỳ chuỗi Substrate-based nào.
+- [Polkascan](http://polkascan.io/) \- Dữ liệu đa chuỗi theo thời gian thực cho chuỗi Polkadot Relay
+  Chain và Parity Substrate.
+- [Subscan.io](https://subscan.io) - - Trình khám phá cho Substrate based chains.
+- [Polkadot Overview](https://youtu.be/lIghiCmHz0U) - Tiến sĩ Gavin Wood trình bày tổng quan về
   Polkadot. (Video)
 - [Polkadot Overview](https://techcrunch.com/video/fireside-chat-with-jutta-steiner-parity-technologies/) -
-  Dr. Jutta Steiner presents Polkadot. (Video)
+  Dr. Jutta Steiner trình bày về Polkadot. (Video)
 - [Polkadot & Substrate Overview](https://www.youtube.com/watch?v=0IoUZdDi5Is&feature=youtu.be) -
-  Dr. Gavin Wood presents Substrate (blockchain in-a-box + VM) and Polkadot, and builds a blockchain
-  on-stage in 30 minutes using Substrate. (Video)
-- [Community / Ecosystem](community.md) - List of community rooms and channels to talk to others
-  about Polkadot.
-- [Sample Applications](#) - Sample applications that are built on or currently being built for
+  Dr. Gavin Wood trình bày về Substrate (blockchain in-a-box + VM) và Polkadot, đồng thời xây dựng
+  một blockchain trên sân khấu trong 30 phút sử dụng Substrate (Video)
+- [Community / Ecosystem](community.md) - Danh sách các phòng cộng đồng và các kênh để nói chuyện
+  với những người khác về Polkadot.
+- [Sample Applications](#) - Các ứng dụng mẫu được xây dựng trên hoặc hiện đang được xây dựng cho
   Polkadot.
-- [Contributing Guide](contributing.md) - Rules for contributing to the wiki.
-- [Polkadot Knowledge Base](https://support.polkadot.network/) - Troubleshooting resources for
-  specific errors and problems.
+- [Contributing Guide](contributing.md) - Quy tắc đóng góp cho wiki.
+- [Polkadot Knowledge Base](https://support.polkadot.network/) - Tài nguyên khắc phục sự cố cho các
+  lỗi và sự cố cụ thể.
 
 [mooc]: https://mooc.web3.foundation/course/blockchain-fundamentals/
 [white-paper]: https://polkadot.network/PolkaDotPaper.pdf

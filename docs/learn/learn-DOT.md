@@ -6,16 +6,15 @@ description: Learn about the tokenomics of the Polkadot ecosystem.
 slug: ../learn-DOT
 ---
 
-## What is DOT?
+## DOT là gì?
 
-DOT is the native token of the Polkadot network in a similar way that BTC is the native token of
-Bitcoin or Ether is the native token of the Ethereum blockchain.
+DOT là mã thông báo gốc của mạng Polkadot theo cách tương tự như BTC là mã thông báo gốc của Bitcoin
+hoặc Ether là mã thông báo gốc của chuỗi khối Ethereum.
 
-The smallest unit of account in a Substrate network (Polkadot, Kusama, etc.) is the Planck (a
-reference to [Planck Length](https://en.wikipedia.org/wiki/Planck_length), the smallest possible
-distance in the physical Universe). You can compare the Planck to Satoshis or Wei, while the DOT is
-like a bitcoin or an ether. Kusama tokens (KSM) are equal to 1e12 Planck, and Polkadot mainnet DOT
-is equal to 1e10 Planck.
+Đơn vị tài khoản nhỏ nhất trong mạng Substrate (Polkadot, Kusama, v.v.) là Planck (tham chiếu đến
+[Planck Length](https://en.wikipedia.org/wiki/Planck_length), khoảng cách nhỏ nhất có thể có trong
+Vũ trụ vật lý). Bạn có thể so sánh Planck với Satoshi hoặc Wei, trong khi DOT giống như bitcoin hoặc
+ether. Mã thông báo Kusama (KSM) bằng 1e12 Planck và Polkadot mainnet DOT bằng 1e10 Planck.
 
 ### Polkadot
 
@@ -27,9 +26,9 @@ is equal to 1e10 Planck.
 | Dot (DOT)       | 10             | 1.0000000000 |
 | Million (MDOT)  | 16             | 1,000,000.00 |
 
-> Note: This changed at block #1*248_328. Previously, DOT was denominated as equal to 1e12 Planck,
-> just like Kusama. This denomination is deprecated, and, if necessary, referred to as "DOT (old)".
-> See [Redenomination of DOT](../general/redenomination.md) for more details.*
+> Note: Điều này đã thay đổi ở khối # 1248_328. Trước đây, DOT được mệnh danh là 1e12 Planck, giống
+> như Kusama. Mệnh giá này không được dùng nữa và nếu cần, được gọi là "DOT (cũ)". Xem
+> [Redenomination of DOT](../general/redenomination.md) để biết thêm chi tiết.
 
 ### Kusama
 
@@ -41,123 +40,122 @@ is equal to 1e10 Planck.
 | MilliKSM (mKSM) | 9              | 0.001000000000 |
 | KSM             | 12             | 1.000000000000 |
 
-## What are the uses of DOT?
+## DOT dùng để làm gì?
 
-DOT serves three key functions in Polkadot:
+DOT phục vụ ba chức năng chính trong Polkadot:
 
-- to be used for governance of the network,
-- to be staked for the operation of the network,
-- to be bonded to connect a chain to Polkadot as a parachain.
+- được sử dụng để quản trị mạng,
+- được đặt cọc cho hoạt động của mạng,
+- được liên kết để kết nối một chuỗi với Polkadot như một parachain.
 
-DOT can also serve ancillary functions by virtue of being a transferrable token. For example, DOT
-stored in the Treasury can be sent to teams working on relevant projects for the Polkadot network.
+DOT cũng có thể phục vụ các chức năng phụ trợ do là một mã thông báo có thể chuyển nhượng. Ví dụ:
+DOT được lưu trữ trong Kho bạc có thể được gửi đến các nhóm làm việc trong các dự án liên quan cho
+mạng Polkadot.
 
-> These concepts have been further explained in the video
+> Các khái niệm này đã được giải thích kỹ hơn trong video
 > [Usage of DOT and KSM on Polkadot and Kusama](https://www.youtube.com/watch?v=POfFgrMfkTo&list=PLOyWqupZ-WGuAuS00rK-pebTMAOxW41W8&index=7).
 
-### DOT for Governance
+### DOT cho quản trị
 
-The first function of DOT is to entitle holders to control the governance of the platform. Some
-functions that are included under the governance mechanism include determining the fees of the
-network, the addition or removal of parachains, and exceptional events such as upgrades and fixes to
-the Polkadot platform.
+Chức năng đầu tiên của DOT là cho phép người nắm giữ quyền kiểm soát việc quản lý nền tảng. Một số
+chức năng được bao gồm trong cơ chế quản trị bao gồm xác định phí của mạng, thêm hoặc xóa parachains
+và các sự kiện đặc biệt như nâng cấp và sửa lỗi cho nền tảng Polkadot.
 
-Polkadot will enable any holder of DOT to participate in governance. For details on how holders can
-participate in governance, as well as their rights and responsibilities, see the
+Polkadot sẽ cho phép bất kỳ chủ sở hữu DOT nào tham gia quản trị. Để biết chi tiết về cách các chủ
+sở hữu có thể tham gia vào quản trị, cũng như các quyền và trách nhiệm của họ, hãy xem
 [governance page](learn-governance.md).
 
-### DOT for Consensus
+### DOT cho sự đồng thuận
 
-DOT will be used to facilitate the consensus mechanism that underpins Polkadot. For the platform to
-function and allow for valid transactions to be carried out across parachains, Polkadot will rely on
-holders of DOT to play active roles. Participants will put their DOT at risk (via staking) to
-perform these functions. The staking of DOT acts as a disincentive for malicious participants who
-will be punished by the network by getting their DOT slashed. The DOT required to participate in the
-network will vary depending on the activity that is being performed, the duration the DOT will be
-staked for, and the total number of DOT staked.
+DOT sẽ được sử dụng để tạo điều kiện thuận lợi cho cơ chế đồng thuận làm nền tảng cho Polkadot. Để
+nền tảng hoạt động và cho phép các giao dịch hợp lệ được thực hiện trên các parachains, Polkadot sẽ
+dựa vào những người nắm giữ DOT để đóng vai trò tích cực. Những người tham gia sẽ đặt DOT của họ vào
+rủi ro (thông qua đặt cược) để thực hiện các chức năng này. Việc đặt cược DOT hoạt động như một hành
+động không khuyến khích đối với những người tham gia ác ý, những người sẽ bị mạng trừng phạt bằng
+cách chém DOT của họ. DOT được yêu cầu để tham gia vào mạng sẽ thay đổi tùy thuộc vào hoạt động đang
+được thực hiện, thời gian DOT sẽ được đặt cược và tổng số DOT được đặt cược.
 
-### DOT for Parachain Slot Acquisition
+### DOT cho Parachain Slot Acquisition
 
-DOT will have the ability to be locked for a duration in order to secure a parachain slot in the
-network. The DOT will be reserved during the slot lease and will be released back to the account
-that reserved them after the duration of the lease has elapsed and the parachain is removed. You can
-learn more about this aspect by reading about the [auctions](learn-auction.md) that govern parachain
-slots.
+DOT sẽ có khả năng bị khóa trong một khoảng thời gian để đảm bảo một vị trí parachain trong mạng.
+DOT sẽ được bảo lưu trong thời gian thuê vị trí và sẽ được trả lại vào tài khoản đã đặt trước chúng
+sau khi thời hạn của hợp đồng thuê trôi qua và parachain bị xóa. Bạn có thể tìm hiểu thêm về khía
+cạnh này bằng cách đọc về các [auctions](learn-auction.md) quản lý parachain slot.
 
 ### Vesting
 
-DOT may have a lock placed on them to account for vesting funds. Like other types of locks, these
-funds cannot be transferred but can be used in other parts of the protocol such as voting in
-governance or being staked as a validator or nominator.
+DOT có thể có một khóa được đặt trên chúng để tài khoản cho các quỹ tranh chấp. Giống như các loại
+khóa khác, các khoản tiền này không thể được chuyển nhượng nhưng có thể được sử dụng trong các phần
+khác của giao thức như bỏ phiếu trong quản trị hoặc được đặt làm người xác nhận (validator) hoặc
+người đề cử (nominator).
 
-Vesting funds are on a linear release schedule and unlock a constant number of tokens at each block.
-Although the tokens are released in this manner, it does not get reflected on-chain automatically
-since locks are [lazy](#lazy-vesting) and require an extrinsic to update.
+Các quỹ ký quỹ theo lịch trình phát hành tuyến tính và mở khóa một số lượng không đổi mã thông báo
+tại mỗi khối. Mặc dù các mã thông báo được phát hành theo cách này, nhưng nó không tự động được phản
+ánh trên chuỗi vì các ổ khóa là [lazy](#lazy-vesting) và yêu cầu bên ngoài cập nhật.
 
-There are two ways that vesting schedules can be created.
+Có hai cách để tạo lịch biểu.
 
-- One way is as part of the genesis configuration of the chain. In the case of Polkadot and Kusama,
-  the chain specification genesis script reads the state of the Polkadot Claims contract that exists
-  on the Ethereum blockchain and creates vesting schedules in genesis for all the allocations
-  registered as being vested.
-- A second way is through an extrinsic type available in the Vesting pallet, `vested_transfer`. The
-  vested transfer function allows anyone to create a vesting schedule with a transfer of funds, as
-  long as the account for which the vesting schedule will be created does not already have one and
-  the transfer moves at least `MinVestedTransfer` funds, which is specified as a chain constant.
+- Một cách là một phần của cấu hình ban đầu của chuỗi. Trong trường hợp của Polkadot và Kusama, tập
+  lệnh khởi tạo đặc điểm kỹ thuật chuỗi đọc trạng thái của hợp đồng Polkadot Claims tồn tại trên
+  chuỗi khối Ethereum và tạo lịch trình kiểm tra trong nguồn gốc cho tất cả các phân bổ được đăng ký
+  là được cấp.
 
-Vesting schedules have three parameters, `locked`, `per_block`, and `starting_block`. The
-configuration of these three fields dictate the amount of funds that are originally locked, the
-slope of the unlock line and the block number for when the unlocking begins.
+- Cách thứ hai là thông qua một kiểu bên ngoài có sẵn trong pallet Vesting, `vested_transfer`. Chức
+  năng chuyển tiền được cấp cho phép bất kỳ ai cũng có thể tạo lịch biểu giao dịch với việc chuyển
+  tiền, miễn là tài khoản mà lịch trình chuyển tiền sẽ được tạo chưa có và việc chuyển tiền sẽ di
+  chuyển ít nhất các khoản tiền `MinVestedTransfer`, được chỉ định dưới dạng một chuỗi hằng số.
+
+Lịch biểu làm việc có ba tham số, `locked`, `per_block` và `start_block`. Cấu hình của ba trường này
+quy định số tiền bị khóa ban đầu, độ dốc của đường mở khóa và số khối khi bắt đầu mở khóa.
 
 #### Lazy Vesting
 
-Like [simple payouts](learn-simple-payouts.md), vesting is _lazy_, which means that someone must
-explicitly call an extrinsic to update the lock that is placed on an account.
+Giống [simple payouts](learn-simple-payouts.md), vesting là _lazy_,có nghĩa là ai đó phải gọi một
+cách rõ ràng một bên ngoài để cập nhật khóa được đặt trên một tài khoản.
 
-- The `vest` extrinsic will update the lock that is placed on the caller.
-- The `vest_other` will update the lock that is placed on another "target" account's funds.
+- `vest` extrinsic sẽ cập nhật khóa được đặt trên người gọi.
+- `vest_other` sẽ cập nhật khóa được đặt trên quỹ của tài khoản "mục tiêu" khác.
 
-These extrinsics are exposed from the Vesting pallet.
+Các extrinsics được thể hiện bởi Vesting pallet.
 
-If you are using Polkadot-JS, when there are DOT available to vest for an account, then you will
-have the ability to unlock DOT which has already vested from the
-[Accounts](https://polkadot.js.org/apps/#/accounts) page.
+Nếu bạn đang sử dụng Polkadot-JS, khi có sẵn DOT để cấp cho một tài khoản, thì bạn sẽ có khả năng mở
+khóa DOT đã được cấp từ trang [Accounts](https://polkadot.js.org/apps/#/accounts).
 
 ![unbond](../assets/unlock-vesting.png)
 
-#### Calculating When Vesting DOT Will Be Available
+#### Tính toán khi có vesting DOT
 
-Generally, you should be able to see from the [Accounts](https://polkadot.js.org/apps/#/accounts) by
-looking at your accounts and seeing when the vesting will finish. However, some DOT vest with
-"cliffs" - a single block where all the DOT are released, instead of vesting over time. In this
-case, you will have to query the chain state directly to see when they will be available (since
-technically, the vesting has not yet started - all of the vesting will occur in a single block in
-the future).
+Nói chung, bạn sẽ có thể nhìn thấy từ [Accounts](https://polkadot.js.org/apps/#/accounts) bằng cách
+xem xét các tài khoản của mình và biết khi nào quá trình yêu cầu sẽ kết thúc. Tuy nhiên, một số DOT
+vest với "vách đá" - một khối duy nhất nơi tất cả các DOT được phát hành, thay vì tranh đua theo
+thời gian. Trong trường hợp này, bạn sẽ phải truy vấn trực tiếp trạng thái chuỗi để xem khi nào
+chúng sẽ khả dụng (vì về mặt kỹ thuật, việc kiểm tra vẫn chưa bắt đầu - tất cả việc kiểm tra sẽ xảy
+ra trong một khối duy nhất trong tương lai).
 
-1. Navigate to the
-   [Chain State](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.polkadot.io#/chainstate) page on
+1. Điều hướng đến trang
+   [Chain State](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.polkadot.io#/chainstate) trên
    Polkadot-JS.
-2. Query chain state for `vesting.vesting(ACCOUNT_ID)`
-3. Note the `startingBlock` where the unlock starts, and how much DOT is unlocked per block
-   (`perBlock`).
-4. You will have to calculate the result into “human time". To do this, remember that there are
-   approximately 14’400 blocks per day, and you can see what the latest block is shown on the
-   [Explorer](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.polkadot.io#/explorer) page.
+2. Trạng thái chuỗi truy vấn cho `vesting.vesting(ACCOUNT_ID)`
+3. Lưu ý `startingBlock` nơi bắt đầu mở khóa và số lượng DOT được mở khóa cho mỗi khối (`perBlock`).
+4. Bạn sẽ phải tính kết quả thành “thời gian của con người”. Để làm điều này, hãy nhớ rằng có khoảng
+   14’400 khối mỗi ngày và bạn có thể xem khối mới nhất được hiển thị trên trang
+   [Explorer](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.polkadot.io#/explorer).
 
-## Obtaining Testnet DOT
+## Testnet DOT
 
-DOT are required to make transactions on the Polkadot network. Testnet DOT do not have any value
-beside allowing you to experiment with the network.
+DOT được yêu cầu để thực hiện các giao dịch trên mạng Polkadot. Testnet DOT không có bất kỳ giá trị
+nào ngoài việc cho phép bạn thử nghiệm với mạng.
 
 ### Getting Westies
 
-The current testnet is called [Westend](../maintain/maintain-networks.md#westend-test-network) and you can
-obtain its native tokens by posting `!drip <WESTEND_ADDRESS>` in the Matrix chatroom
-[#westend_faucet:matrix.org](https://matrix.to/#/#westend_faucet:matrix.org).
+Testnet hiện tại được gọi là [Westend](../maintain/maintain-networks.md#westend-test-network) và bạn
+có thể nhận mã thông báo gốc của nó bằng cách đăng`!drip <WESTEND_ADDRESS>` trong phòng trò chuyện
+matrix [#westend_faucet:matrix.org](https://matrix.to/#/#westend_faucet:matrix.org).
 
-You can also make your own WNDs (testnet DOT) by [becoming a validator](learn-validator.md).
+Bạn cũng có thể tạo WND (testnet DOT) của riêng mình bằng
+cách[becoming a validator](learn-validator.md).
 
-Watch this video on how to get started on Westend
+Xem video này về cách bắt đầu với Westend
 [![Testing Polkadot features on Westend](https://img.youtube.com/vi/0ji0ccZyb3k/0.jpg)](https://www.youtube.com/watch?v=0ji0ccZyb3k)
 
 ### Westend
@@ -170,23 +168,21 @@ Watch this video on how to get started on Westend
 | MilliWND (mWND) | 9              | 0.001000000000 |
 | WND             | 12             | 1.000000000000 |
 
-### Getting Rococo Tokens
+### Nhận Rococo Tokens
 
-Rococo is a parachain testnet. Tokens are given directly to teams working on parachains or exploring
-the [cross consensus](learn-cross-consensus.md) message passing aspects of this testnet. General users can
-obtain ROC by posting `!drip <ROCOCO_ADDRESS>` in the Matrix chatroom
+Rococo là một mạng thử nghiệm parachain. Mã thông báo được trao trực tiếp cho các nhóm làm việc trên
+parachains hoặc khám phá thông điệp [cross consensus](learn-cross-consensus.md)chuyển các khía cạnh
+của mạng thử nghiệm này. Người dùng thông thường có thể nhận ROC bằng cách đăng
+`!drip <ROCOCO_ADDRESS>` trong phòng trò chuyện Matrix
 [#rococo-faucet:matrix.org](https://matrix.to/#/#rococo-faucet:matrix.org).
 
-Learn more about Rococo on its [dedicated wiki section](../build/build-parachains.md##testing-a-parachains:-rococo-testnet).
+Tìm hiểu thêm về Rococo trên
+[dedicated wiki section](../build/build-parachains.md##testing-a-parachains:-rococo-testnet) của nó.
 
 ## Kusama Tokens
 
-Unlike testnet DOT, Kusama tokens are not freely given away. Kusama tokens are available via the
-[claims process](https://claim.kusama.network/) (if you had DOT at the time of Kusama genesis) or
-through the [Treasury](learn-treasury.md). Alternatively, they can be obtained on the open market.
+Không giống như testnet DOT, token Kusama không được tặng miễn phí. Mã thông báo Kusama có sẵn thông qua quy trình xác nhận quyền sở hữu ([claims process](https://claim.kusama.network/)) (nếu bạn có DOT vào thời điểm hình thành Kusama) hoặc thông qua [Treasury](learn-treasury.md). Ngoài ra, chúng có thể được mua trên thị trường mở.
 
 ## Polkadot Mainnet DOT
 
-Polkadot Mainnet DOT are not freely given away. If you purchased DOT in the original 2017 offering,
-you may claim them via the [Polkadot claims process](https://claims.polkadot.network/).
-Alternatively, they are available on the open market.
+Polkadot Mainnet DOT không được tặng miễn phí. Nếu bạn đã mua DOT trong đợt ưu đãi ban đầu năm 2017, bạn có thể yêu cầu chúng thông qua quy trình xác nhận quyền sở hữu Polkadot ([Polkadot claims process](https://claims.polkadot.network/)). Ngoài ra, chúng có sẵn trên thị trường mở.

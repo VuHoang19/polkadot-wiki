@@ -6,78 +6,49 @@ description: An introduction about validators.
 slug: ../learn-validator
 ---
 
-Validators secure the [Relay Chain](learn-architecture.md#relay-chain) by staking DOT, validating
-proofs from collators and participating in consensus with other validators.
+Người xác thực bảo mật [Relay Chain](learn-architecture.md#relay-chain) bằng cách đặt cược DOT, xác thực bằng chứng từ những người đối chiếu (collator) và tham gia đồng thuận với những người xác nhận khác.
 
-These participants play a crucial role in adding new blocks to the Relay Chain and, by extension, to
-all parachains. This allows parties to complete cross-chain transactions via the Relay Chain.
-Parachain validators participate in some form of off-chain consensus, and submit candidate receipts
-to the tx pool for a block producer to include on-chain. The Relay Chain validators guarantee that
-each parachain follows its unique rules and can pass messages between shards in a trust-free
-environment.
+Những người tham gia này đóng một vai trò quan trọng trong việc thêm các khối mới vào Relay chain và mở rộng ra là cho tất cả các phân đoạn. Điều này cho phép các bên hoàn thành các giao dịch xuyên chuỗi thông qua Chuỗi chuyển tiếp. Trình xác thực Parachain tham gia vào một số hình thức đồng thuận ngoài chuỗi và gửi biên nhận ứng viên đến nhóm tx để nhà sản xuất khối đưa vào chuỗi. Trình xác thực Relay chain đảm bảo rằng mỗi parachain tuân theo các quy tắc duy nhất của nó và có thể truyền thông điệp giữa các phân đoạn trong một môi trường không tin cậy.
 
-Validators perform two functions:
+Trình xác thực thực hiện hai chức năng:
 
-1. **Verifying** that the information contained in an assigned set of parachain blocks is valid
-   (such as the identities of the transacting parties and the subject matter of the contract).
-2. **Participating** in the consensus mechanism to produce the Relay Chain blocks based on validity
-   statements from other validators. Any instances of non-compliance with the consensus algorithms
-   result in punishment by removal of some or all of the validator’s staked DOT, thereby
-   discouraging bad actors. Good performance, however, will be rewarded, with validators receiving
-   block rewards (including transaction fees) in the form of DOT in exchange for their activities.
+1. **Verifying** Xác minh rằng thông tin có trong một tập hợp các khối parachain được chỉ định là hợp lệ (chẳng hạn như danh tính của các bên giao dịch và đối tượng của hợp đồng).
+2. **Participating** Tham gia vào cơ chế đồng thuận để tạo ra các khối Chuỗi chuyển tiếp dựa trên các tuyên bố hợp lệ từ các trình xác nhận khác. Bất kỳ trường hợp nào không tuân thủ các thuật toán đồng thuận đều dẫn đến việc bị trừng phạt bằng cách xóa một số hoặc tất cả DOT của trình xác thực, do đó không khuyến khích các tác nhân xấu. Tuy nhiên, hiệu suất tốt sẽ được thưởng, với những người xác nhận nhận được phần thưởng khối (bao gồm phí giao dịch) dưới dạng DOT để đổi lấy các hoạt động của họ.
 
-## Guides
+## Hướng dẫn
 
-- [How to Validate on Polkadot](../maintain/maintain-guides-how-to-validate-polkadot.md) - Guide on how to set
-  up a validator on the Polkadot live network.
-- [Validator Payout Overview](../maintain/maintain-guides-validator-payout.md) - A short overview on how the
-  validator payout mechanism works.
-- [How to run your validator as a systemd process](../maintain/maintain-guides-how-to-systemd.md) - Guide on
-  running your validator as a `systemd` process so that it will run in the background and start
-  automatically on reboots.
-- [How to Upgrade your Validator](../maintain/maintain-guides-how-to-upgrade.md) - Guide for securely upgrading
-  your validator when you want to switch to a different machine or begin running the latest version
-  of client code.
-- [How to Use Validator Setup](../maintain/maintain-guides-how-to-use-polkadot-validator-setup.md) - Guide on how
-  to use Polkadot / Kusama validator setup.
+- [How to Validate on Polkadot](../maintain/maintain-guides-how-to-validate-polkadot.md) - Hướng dẫn cách thiết lập trình xác thực trên mạng trực tiếp Polkadot.
+- [Validator Payout Overview](../maintain/maintain-guides-validator-payout.md) - Tổng quan ngắn gọn về cách hoạt động của cơ chế thanh toán của trình xác thực.
+- [How to run your validator as a systemd process](../maintain/maintain-guides-how-to-systemd.md) - Hướng dẫn chạy trình xác nhận của bạn dưới dạng quy trình systemd để nó sẽ chạy ở chế độ nền và tự động bắt đầu khi khởi động lại.
+- [How to Upgrade your Validator](../maintain/maintain-guides-how-to-upgrade.md) - Hướng dẫn nâng cấp trình xác thực một cách an toàn khi bạn muốn chuyển sang một máy khác hoặc bắt đầu chạy phiên bản mã ứng dụng khách mới nhất.
+- [How to Use Validator Setup](../maintain/maintain-guides-how-to-use-polkadot-validator-setup.md) - Hướng dẫn cách sử dụng thiết lập trình xác thực Polkadot / Kusama.
 
-## Other References
+## Tài liệu tham khảo khác
 
 - [How to run a Polkadot node (Docker)](https://medium.com/@acvlls/setting-up-a-maintain-the-easy-way-3a885283091f)
 - [A Serverless Failover Solution for Web3.0 Validator Nodes](https://medium.com/hackernoon/a-serverless-failover-solution-for-web-3-0-validator-nodes-e26b9d24c71d) -
-  Blog that details how to create a robust failover solution for running validators.
+  Blog hướng dẫn chi tiết cách tạo giải pháp chuyển đổi dự phòng mạnh mẽ để chạy trình xác thực.
 - [VPS list](../maintain/kusama/maintain-guides-how-to-validate-kusama.md##vps-list)
 - [Polkadot Validator Lounge](https://matrix.to/#/!NZrbtteFeqYKCUGQtr:matrix.parity.io?via=matrix.parity.io&via=matrix.org&via=web3.foundation) -
-  A place to chat about being a validator.
-- [Slashing Consequences](learn-staking#slashing) - Learn more about slashing consequences for
-  running a validator node.
+  Nơi trò chuyện về việc trở thành người xác nhận.
+- [Slashing Consequences](learn-staking#slashing) - Tìm hiểu thêm về hệ quả của việc cắt giảm khi chạy một nút trình xác thực.
 - [Why You Should be A Validator on Polkadot and Kusama](https://www.youtube.com/watch?v=0EmP0s6JOW4&list=PLOyWqupZ-WGuAuS00rK-pebTMAOxW41W8&index=2)
 - [Roles and Responsibilities of a Validator](https://www.youtube.com/watch?v=riVg_Up_fCg&list=PLOyWqupZ-WGuAuS00rK-pebTMAOxW41W8&index=15)
-- [Validating on Polkadot](https://www.crowdcast.io/e/validating-on-polkadot) - An explanation of
-  how to validate on Polkadot, with Joe Petrowski and David Dorgan of Parity Technologies, along
-  with Tim Ogilvie from Staked.
+- [Validating on Polkadot](https://www.crowdcast.io/e/validating-on-polkadot) - Giải thích về cách xác thực trên Polkadot, với Joe Petrowski và David Dorgan của Parity Technologies, cùng với Tim Ogilvie từ Staked.
 
-## Security / Key Management
+## Bảo mật / Quản lý khóa
 
 - [Validator Security Overview](https://github.com/w3f/validator-security)
 
-## Monitoring Tools
+## Công cụ giám sát
 
-- [PANIC for Polkadot](https://github.com/SimplyVC/panic_polkadot) - A monitoring and alerting
-  solution for Polkadot / Kusama node
-- [Polkadot Telemetry Service](https://telemetry.polkadot.io/#list/Kusama%20CC3) - Network
-  information, including what nodes are running on a given chain, what software versions they are
-  running, and sync status.
+- [PANIC for Polkadot](https://github.com/SimplyVC/panic_polkadot) - Một giải pháp giám sát và cảnh báo cho nút Polkadot / Kusama
+- [Polkadot Telemetry Service](https://telemetry.polkadot.io/#list/Kusama%20CC3) - Thông tin mạng, bao gồm những nút nào đang chạy trên một chuỗi nhất định, phiên bản phần mềm nào chúng đang chạy và trạng thái đồng bộ hóa.
 - [Other Useful Links](https://forum.web3.foundation/t/useful-links-for-validators/20)
 
-## Validator Stats
+## Thống kê Trình xác thực
 
-- [HashQuark Staking Strategy](https://polkacube.hashquark.io/#/polkadot/strategy) - The HashQuark
-  staking strategy dashboard helps you choose the optimal set-up to maximize rewards, and provides
-  other useful network monitoring tools.
-- [Polkastats](https://polkastats.io/) - Polkastats is a cleanly designed dashboard for validator
-  statistics.
-- [YieldScan](https://yieldscan.app/) - Staking yield maximization platform, designed to minimize
-  effort.
-- [Subscan Validators Page](https://kusama.subscan.io/validator) - Displays information on the
-  current validators - not as tailored for validators as the other sites.
+- [HashQuark Staking Strategy](https://polkacube.hashquark.io/#/polkadot/strategy) - Bảng điều khiển chiến lược đặt cược HashQuark giúp bạn chọn thiết lập tối ưu để tối đa hóa phần thưởng và cung cấp các công cụ giám sát mạng hữu ích khác.
+- [Polkastats](https://polkastats.io/) - Polkastats là một trang tổng quan được thiết kế gọn gàng để thống kê trình xác thực.
+- [YieldScan](https://yieldscan.app/) - Nền tảng tối đa hóa năng suất cố định, được thiết kế để giảm thiểu nỗ lực.
+- [Subscan Validators Page](https://kusama.subscan.io/validator) - Hiển thị thông tin về các trình xác thực hiện tại - không được thiết kế riêng cho các trình xác thực như các trang khác.

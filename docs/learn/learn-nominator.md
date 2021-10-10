@@ -6,197 +6,99 @@ description: Learn about what it means to be a nominator.
 slug: ../learn-nominator
 ---
 
-Nominators secure the Relay Chain by selecting good validators and staking DOT.
+Những người được đề cử bảo vệ Relay chain bằng cách chọn những người xác nhận tốt và đặt DOT.
 
-You may have an account with DOT and want to earn fresh DOT. You could do so as validator, which
-requires a node running 24/7. If you do not have such node or do not want to bother, you can still
-earn DOT by nominating one or more validators.
+Bạn có thể có một tài khoản với DOT và muốn kiếm DOT mới. Bạn có thể làm như vậy với tư cách là trình xác nhận(validator), yêu cầu một nút hoạt động 24/7. Nếu bạn không có nút như vậy hoặc không muốn làm phiền, bạn vẫn có thể kiếm được DOT bằng cách đề cử một hoặc nhiều trình xác nhận.
 
-By doing so, you become a nominator for the validator(s) of your choice. Pick your validators
-carefully - if they do not behave properly, they will get slashed and you will lose DOT as well.
-However, if they do follow the rules of the network, then you can share in staking rewards that they
-generate.
+Bằng cách đó, bạn trở thành người đề cử cho (các) người xác nhận mà bạn lựa chọn. Chọn người xác nhận của bạn một cách cẩn thận - nếu họ không cư xử đúng, họ sẽ bị chém và bạn cũng sẽ mất DOT. Tuy nhiên, nếu họ tuân theo các quy tắc của mạng, thì bạn có thể chia sẻ phần thưởng đặt cược mà họ tạo ra.
 
-While your DOT are staked by nominating a validator, they are 'locked' (bonded). You can receive new
-DOT in your account but you cannot stake as validator or transfer DOT away from your account. You
-can [un-nominate at any time](../maintain/maintain-guides-how-to-unbond.md) to stop staking your funds. Keep in
-mind that the un-nomination is effective in the next era, and that un-nominating does not
-automatically unbond your funds. There is an unbonding period of 7 days on Kusama and 28 days on
-Polkadot before bonded funds can be transferred after issuing an unbond transaction.
+Trong khi DOT của bạn được đặt cược bằng cách chỉ định người xác nhận, chúng bị 'khóa' (ngoại quan). Bạn có thể nhận DOT mới trong tài khoản của mình nhưng bạn không thể đặt cược với tư cách là người xác thực hoặc chuyển DOT khỏi tài khoản của mình. Bạn có thể hủy đề cử bất kỳ lúc nào ([un-nominate at any time](../maintain/maintain-guides-how-to-unbond.md)) để ngừng ký quỹ của mình. Hãy nhớ rằng việc bỏ đề cử sẽ có hiệu lực trong kỷ nguyên tiếp theo và việc hủy đề cử không tự động hủy bỏ các khoản tiền của bạn. Có khoảng thời gian không ràng buộc là 7 ngày trên Kusama và 28 ngày trên Polkadot trước khi tiền ngoại quan có thể được chuyển sau khi phát hành một giao dịch hủy ràng buộc.
 
 ### Active vs. Inactive Nomination
 
-When you go to the [Account actions](https://polkadot.js.org/apps/#/staking/actions) under staking
-page, you should see your bonded accounts and nomination status. If not, you can follow
-[this](../maintain/maintain-guides-how-to-nominate-polkadot.md) guide to configure it first. Your nominations
-will be effective in the next era; eras are roughly 6 hours on Kusama and 24 hours on Polkadot.
+Khi bạn chuyển đến phần [Account actions](https://polkadot.js.org/apps/#/staking/actions) trong trang đặt cược, bạn sẽ thấy các tài khoản ngoại quan và trạng thái đề cử của mình. Nếu không, bạn có thể làm theo 
+[hướng dẫn này](../maintain/maintain-guides-how-to-nominate-polkadot.md) để cấu hình nó trước. Các đề cử của bạn sẽ có hiệu lực trong thời đại tiếp theo; kỷ nguyên là khoảng 6 giờ trên Kusama và 24 giờ trên Polkadot.
 
 ![Nominations](../assets/staking/polkadotjs_nominator_account.png)
 
-Suppose you have nominated five validator candidates, and three out of five were elected to the
-active validator set, then you should see two of your nominations as "waiting", and most likely one
-as "active" and the rest as "inactive". Active or inactive nomination means your nominated
-validators have been elected to be in the validator set, whereas waiting means they did not get
-elected. Generally, you will only have a single validator have an active nomination, which means
-that you are directly supporting it with your stake this era and thus potentially receiving staking
-rewards. Inactive nominators were validators that were elected for this era but which you are not
-actively supporting. Every era, a new election will take place and you may be assigned a different
-active nomination from among the validators you have selected.
+Giả sử bạn đã đề cử năm ứng cử viên trình xác thực và ba trong số năm ứng cử viên được bầu vào nhóm trình xác thực đang hoạt động, thì bạn sẽ thấy hai trong số các đề cử của mình là "đang chờ", và rất có thể một là "đang hoạt động" và phần còn lại là "không hoạt động". Đề cử đang hoạt động hoặc không hoạt động có nghĩa là những người xác nhận được đề cử của bạn đã được bầu vào nhóm xác nhận, trong khi chờ đợi có nghĩa là họ đã không được bầu. Nói chung, bạn sẽ chỉ có một người xác nhận duy nhất có một đề cử đang hoạt động, có nghĩa là bạn đang trực tiếp hỗ trợ nó với số tiền đặt cược của bạn trong thời đại này và do đó có khả năng nhận được phần thưởng đặt cược. Những người được đề cử không hoạt động là những người xác nhận đã được bầu chọn cho thời đại này nhưng bạn không tích cực ủng hộ. Mỗi thời đại, một cuộc bầu cử mới sẽ diễn ra và bạn có thể được chỉ định một đề cử đang hoạt động khác trong số những người xác nhận mà bạn đã chọn.
 
-If you are committing a very large amount of stake, then you may have more than one active
-nomination. However, the election algorithm attempts to minimize this situation, and it should not
-occur often, so you should almost always see only a single active nomination per era. See the
-[section on Phragmén optimization](learn-phragmen.md#optimizations) for more details.
+Nếu bạn đang cam kết một số tiền cổ phần rất lớn, thì bạn có thể có nhiều hơn một đề cử đang hoạt động. Tuy nhiên, thuật toán bầu cử cố gắng giảm thiểu tình huống này và nó sẽ không xảy ra thường xuyên, vì vậy bạn hầu như luôn chỉ thấy một đề cử đang hoạt động duy nhất cho mỗi thời đại. Xem phần
+[section on Phragmén optimization](learn-phragmen.md#optimizations) để biết thêm chi tiết.
 
-### Required Minimum Stake
+### Số cổ phần tối thiểu bắt buộc
 
-Due to the way the [Phragmen algorithm](learn-phragmen.md) generates the solution set, and due to
-the fact that the solution set must fit in a single block, in some eras, a minimum number of DOT
-will be required to nominate with in order to receive staking rewards.
+Do cách [Phragmen algorithm](learn-phragmen.md) tạo tập giải pháp và do thực tế là tập giải pháp phải nằm trong một khối duy nhất, trong một số thời đại, số lượng DOT tối thiểu sẽ được đề cử để nhận phần thưởng đặt cược.
 
-This parameter can be updated via on-chain governance and the most recent and up to date version can
-be found on [chain state](https://polkadot.js.org/apps/#/chainstate) (select **state query >
+Tham số này có thể được cập nhật thông qua quản trị trên chuỗi và có thể tìm thấy phiên bản mới nhất và cập nhật nhất trên [chain state](https://polkadot.js.org/apps/#/chainstate) (select **state query >
 staking > minimumNominatorBond**)
 
 ### Oversubscribed Validators
 
-Validators can only pay out to a certain number of nominators per era. This is currently set to
-{{ polkadot_max_nominators }}, but can be modified via governance. If more than
-{{ polkadot_max_nominators }} nominators nominate the same validator, it is "oversubscribed", and
-only the top {{ polkadot_max_nominators }} staked nominators (ranked by amount of stake) are paid
-rewards. Other nominators will receive no rewards for that era, although their stake will still be
-used to calculate entry into the active validator set.
+Người xác thực chỉ có thể trả tiền cho một số người được đề cử nhất định cho mỗi thời đại. Điều này hiện được đặt thành {{polkadot_max_nominators}}, nhưng có thể được sửa đổi thông qua quản trị. Nếu có hơn {{polkadot_max_nominators}} người đề cử đề cử cùng một trình xác thực, thì đó là "người đăng ký quá mức" và chỉ {{polkadot_max_nominators}} người đề cử hàng đầu (xếp hạng theo số tiền đặt cược) mới được trả thưởng. Những người được đề cử khác sẽ không nhận được phần thưởng cho thời đại đó, mặc dù tiền đặt cược của họ vẫn sẽ được sử dụng để tính toán việc tham gia vào tập hợp trình xác thực đang hoạt động.
 
-Although it is difficult to determine exactly how many nominators will nominate a given validator in
-the next era, one can estimate based on the current number of nominators. A validator with only 5
-nominators in this era, for instance, is unlikely to have more than {{ polkadot_max_nominators }} in
-the next era. An already-oversubscribed validator with 1000 nominators this era, however, is very
-likely to be oversubscribed in the next era as well.
+Mặc dù rất khó để xác định chính xác có bao nhiêu người được đề cử sẽ đề cử một trình xác nhận nhất định trong kỷ nguyên tiếp theo, nhưng người ta có thể ước tính dựa trên số lượng người được đề cử hiện tại. Ví dụ: một trình xác thực chỉ có 5 đề cử trong thời đại này, khó có thể có nhiều hơn {{polkadot_max_nominators}} trong kỷ nguyên tiếp theo. Tuy nhiên, một trình xác thực đã được đăng ký quá mức với 1000 người được đề cử trong thời đại này, cũng rất có thể bị đăng ký quá mức trong thời đại tiếp theo.
 
-### The Election Solution Set
+### Bộ Giải pháp Bầu cử
 
-Determining which validators are in the active set and which nominators are nominating them creates
-a very large graph mapping nominators to their respective validators. This "solution set" is
-computed off-chain and submitted to the chain, which means it must fit in a single block. If there
-are a large number of nominators, this means that some nominators must be eliminated. Currently,
-nominators are sorted by amount of DOT staked and those with more DOT are prioritized. This means
-that if you are staking with a small amount of DOT, you may not receive rewards. This minimal amount
-is dynamic based on the number of validators, number of nominators, amount nominated, and other
-factors.
+Việc xác định những trình xác thực nào trong tập hợp đang hoạt động và những đề cử nào đang đề cử chúng sẽ tạo ra những đề cử ánh xạ đồ thị rất lớn cho những trình xác nhận tương ứng của chúng. "Bộ giải pháp" này được tính toán ngoài chuỗi và được gửi đến chuỗi, có nghĩa là nó phải nằm gọn trong một khối duy nhất. Nếu có một số lượng lớn người được đề cử, điều này có nghĩa là một số người được đề cử phải bị loại bỏ. Hiện tại, những người được đề cử được sắp xếp theo số lượng DOT đặt cược và những người có nhiều DOT hơn được ưu tiên. Điều này có nghĩa là nếu bạn đặt cược với một lượng DOT nhỏ, bạn có thể không nhận được phần thưởng. Số tiền tối thiểu này là động dựa trên số lượng người xác nhận, số lượng người được đề cử, số lượng được đề cử và các yếu tố khác.
 
-### Receiving Rewards
+### Nhận phần thưởng
 
-As long as you have nominated more than one validator candidate, at least one of them got elected,
-and you are nominating with enough stake to get into the solution set, your bonded stake will be
-fully distributed to one or more validators. That being said, you may not receive rewards if you
-nominated very few validator candidates and no one got elected, or your stake is small and you only
-selected oversubscribed validators, or the validator you are nominating has 100% commission. It is
-generally wise to choose as many trustworthy validators as you can (up to 16) to reduce the risk of
-none of your nominated validators being elected.
+Miễn là bạn đã đề cử nhiều hơn một ứng cử viên xác thực, ít nhất một trong số họ đã được bầu và bạn đang đề cử với đủ cổ phần để tham gia bộ giải pháp, cổ phần ngoại quan của bạn sẽ được phân phối đầy đủ cho một hoặc nhiều người xác nhận. Điều đó đang được nói, bạn có thể không nhận được phần thưởng nếu bạn chỉ định rất ít ứng cử viên xác thực và không ai được bầu, hoặc số tiền của bạn nhỏ và bạn chỉ chọn những người xác thực đã đăng ký quá mức hoặc người xác thực bạn đang đề cử có 100% hoa hồng. Thông thường, bạn nên chọn càng nhiều người xác thực đáng tin cậy càng tốt (tối đa 16 người) để giảm nguy cơ không có người xác nhận nào được đề cử của bạn được bầu chọn.
 
-Rewards are *lazy* - somebody must trigger a payout for a validator for rewards to go all of the
-validator's nominators. Any account can do this, although in practice validator operators often do
-this as a service to their nominators. See the page on [Simple Payouts](learn-simple-payouts.md) for
-more information and instructions for claiming rewards.
+Phần thưởng là *lazy* - ai đó phải kích hoạt thanh toán cho người xác thực để phần thưởng đi đến tất cả các đề cử của người xác nhận. Bất kỳ tài khoản nào cũng có thể làm điều này, mặc dù trong thực tế, các nhà khai thác trình xác thực thường làm điều này như một dịch vụ cho những người đề cử của họ. Xem trang [Simple Payouts](learn-simple-payouts.md) để biết thêm thông tin và hướng dẫn nhận phần thưởng.
 
-### What to Take Into Consideration When Nominating
+### Cần Cân nhắc Điều gì Khi Đề cử
 
-One thing to keep in mind as a nominator is the validator's commission. The commission is the
-percentage of the validator reward which is taken by the validator before the rewards are split
-among the nominators. As a nominator, you may think that the lowest commission is best. However,
-this is not always true. Validators must be able to run at break-even in order to sustainably
-continue operation. Independent validators that rely on the commission to cover their server costs
-help to keep the network decentralized. Commission is just one piece of the puzzle that you should
-consider when picking validators to nominate.
+Một điều cần ghi nhớ với tư cách là người đề cử là hoa hồng của người xác nhận. Hoa hồng là tỷ lệ phần trăm của phần thưởng người xác nhận được người xác nhận thực hiện trước khi phần thưởng được chia cho những người được đề cử. Là một người được đề cử, bạn có thể nghĩ rằng mức hoa hồng thấp nhất là tốt nhất. Tuy nhiên, điều này không phải luôn luôn đúng. Trình xác thực phải có thể chạy ở mức hòa vốn để tiếp tục hoạt động bền vững. Người xác nhận độc lập dựa vào hoa hồng để trang trải chi phí máy chủ của họ giúp giữ cho mạng phi tập trung. Hoa hồng chỉ là một phần của câu đố mà bạn nên cân nhắc khi chọn người xác nhận để đề cử.
 
 ![Staking Returns](../assets/staking/polkadotjs_nominators_target.png)
 
-As a nominator, if you only want to know the profit each validator made for each era, you can go to
-the [Targets](https://polkadot.js.org/apps/#/staking/targets) section under the staking page by
-inputting the number of tokens you would like to stake to check it. Then, nominate those who have a
-higher profit. However, that does not guarantee the right way to evaluate the validators' overall
-performance.
+Với tư cách là người đề cử, nếu bạn chỉ muốn biết lợi nhuận mà mỗi người xác thực tạo ra cho mỗi thời đại, bạn có thể chuyển đến phần [Targets](https://polkadot.js.org/apps/#/staking/targets) dưới trang đặt cược bằng cách nhập số lượng mã thông báo bạn muốn đặt cược để kiểm tra. Sau đó, đề cử những người có lợi nhuận cao hơn. Tuy nhiên, điều đó không đảm bảo cách đúng đắn để đánh giá hiệu suất tổng thể của trình xác nhận.
 
-It is worth taking into consideration "own stake" of a validator. This refers to the quantity of DOT
-the validator has put up at stake themselves. A higher "own stake" amount can be considered
-as having more "skin in the game". This can imply increased trustworthiness. However, a validator not
-having a large amount of "own stake" is not automatically untrustworthy, as the validator could be
-nominating from a different address.
+Xem xét "cổ phần riêng" của một trình xác nhận là cần thiết. Điều này đề cập đến số lượng DOT mà trình xác thực đã tự đặt ra. Số tiền "cược riêng" cao hơn có thể được coi là có nhiều "da trong trò chơi" hơn. Điều này có thể ngụ ý tăng độ tin cậy. Tuy nhiên, trình xác thực không có số lượng lớn "cổ phần riêng" không tự động không đáng tin cậy, vì trình xác nhận có thể được đề cử từ một địa chỉ khác.
 
-### Filter Out Validators With Undesirable Traits
+### Lọc ra các trình xác thực có đặc điểm không mong muốn
 
-On the Targets page, you can filter out validators that have traits that may indicate an issue with
-you nominating them. You can turn these filters off and on to help narrow down which validators you
-should nominate. It is important to note that none of these traits are necessarily "bad"; however,
-depending on your validator selection methodology, they may be characteristics that you would be
-interested in filtering out.
+Trên trang Targets, bạn có thể lọc ra những trình xác thực có những đặc điểm có thể chỉ ra vấn đề khi bạn đề cử họ. Bạn có thể tắt và bật các bộ lọc này để giúp thu hẹp trình xác thực nào bạn nên chỉ định. Điều quan trọng cần lưu ý là không có đặc điểm nào trong số những đặc điểm này nhất thiết là "xấu"; tuy nhiên, tùy thuộc vào phương pháp lựa chọn trình xác nhận của bạn, chúng có thể là những đặc điểm mà bạn muốn lọc ra.
 
-- **Single from operator** - Do not show groups of validators run by a single operator.
-- **No 20%+ comm** - Do not show any validators with a commission of 20% or higher.
-- **No at capacity** - Do not show any validators who are currently operating
-  [at capacity](../general/glossary.md#capacity) (i.e., could potentially be oversubscribed).
-- **Recent payouts** - Only show validators that have recently caused a
-  [payout to be issued](learn-simple-payouts.md). Note that anyone can cause a payout to occur; it
-  does not have to be the operator of a validator.
-- **Only elected** - Only show validators that are currently in the active set (i.e., they have been
-  elected to produce blocks this era).
-- **Only with an identity** - Only show validators that have set an [identity](learn-identity.md).
-  Note that this identity does not have to be verified by a registrar for the validator to show up
-  in the list.
+- **Single from operator** - Không hiển thị các nhóm trình xác thực được điều hành bởi một toán tử duy nhất.
+- **No 20%+ comm** - Không hiển thị bất kỳ trình xác thực nào có hoa hồng từ 20% trở lên.
+- **No at capacity** - Không hiển thị bất kỳ trình xác thực nào hiện đang hoạt động hết công suất
+  ([at capacity](../general/glossary.md#capacity)) (i.e., có thể có khả năng bị đăng ký quá mức).
+- **Recent payouts** - Chỉ hiển thị các trình xác thực gần đây đã khiến một khoản thanh toán được phát hành.
+  ([payout to be issued](learn-simple-payouts.md)). Lưu ý rằng bất kỳ ai cũng có thể khiến một khoản thanh toán xảy ra; nó không cần phải là nhà điều hành của trình xác nhận.
+- **Only elected** - Chỉ hiển thị những người xác thực hiện đang ở trong nhóm đang hoạt động (tức là họ đã được bầu để tạo ra các khối trong thời đại này).
+- **Only with an identity** - Chỉ hiển thị những trình xác thực đã đặt một danh tính ([identity](learn-identity.md)).
+  Lưu ý rằng danh tính này không phải được tổ chức đăng ký tên miền xác minh để trình xác thực hiển thị trong danh sách.
 
-### Review Your Validators' History
+### Xem lại lịch sử trình xác thực của bạn
 
-How the validator acted in the past may be a good indicator of how they will act in the future. An
-example of problematic behavior would be if a validator is regularly offline, their nominators most
-likely would get fewer rewards than others. More importantly, when many validators are
-[unreachable](learn-staking.md#unresponsiveness), those nominators who staked with them will be
-slashed.
+Cách trình xác nhận đã hành động trong quá khứ có thể là một chỉ báo tốt về cách họ sẽ hành động trong tương lai. Một ví dụ về hành vi có vấn đề sẽ là nếu người xác thực thường xuyên ngoại tuyến, những người được đề cử của họ rất có thể sẽ nhận được ít phần thưởng hơn những người khác. Quan trọng hơn, khi nhiều người xác nhận không thể truy cập được ([unreachable](learn-staking.md#unresponsiveness)), những người được đề cử đặt cược với họ sẽ bị cắt.
 
 ![Validator Stats](../assets/staking/polkadotjs_validator_stats.png)
 
-Thus, to be a smart nominator, it would be better to query their
-[histories](https://polkadot.js.org/apps/#/staking/query/) to see statistics such as blocks
-produced, rewards and slashes, and [identity](learn-identity.md) (if they have it set). Moreover, a
-nominator should do comprehensive research on their validator candidates - they should go over the
-validators' websites to see who they are, what kind of infrastructure setup they are using,
-reputation, the vision behind the validator, and more.
+Do đó, để trở thành một nhà đề cử thông minh, tốt hơn là bạn nên truy vấn lịch sử của họ ([histories](https://polkadot.js.org/apps/#/staking/query/)) để xem các số liệu thống kê như các khối được tạo ra, phần thưởng và dấu gạch chéo và danh tính ([identity](learn-identity.md)) (nếu họ đã đặt nó). Hơn nữa, người đề cử nên nghiên cứu toàn diện về các ứng cử viên trình xác thực của họ - họ nên xem qua trang web của người xác nhận để xem họ là ai, loại thiết lập cơ sở hạ tầng mà họ đang sử dụng, danh tiếng, tầm nhìn đằng sau trình xác nhận và hơn thế nữa.
 
-### Be Aware of The Risks of Single Operators with Multiple Validators
+### Nhận thức rủi ro của các nhà khai thác đơn lẻ với nhiều trình xác thực
 
-Recall that slashing is an additive function; the more validators that are offline or equivocate in
-a given session, the harsher the penalties. Since validators that are controlled by a single entity
-are more at risk of a "synchronized" failure, nominating them implies a greater risk of having a
-large slash of your nominated funds. Generally, it is safer to nominate validators whose behavior is
-independent from others in as many ways as possible (different hardware, geographic location, owner,
-etc.).
+Nhớ lại rằng chém là một hàm cộng; càng nhiều trình xác thực ngoại tuyến hoặc không tập trung trong một phiên nhất định, thì hình phạt càng khắc nghiệt. Vì trình xác thực được kiểm soát bởi một thực thể có nhiều nguy cơ bị lỗi "đồng bộ hóa" hơn, nên việc chỉ định họ ngụ ý rủi ro lớn hơn về việc cắt giảm lớn số tiền được chỉ định của bạn. Nói chung, sẽ an toàn hơn nếu chỉ định người xác nhận có hành vi độc lập với những người khác theo nhiều cách nhất có thể (phần cứng khác nhau, vị trí địa lý, chủ sở hữu, v.v.).
 
-### Avoiding Oversubscribed Validators
+### Tránh trình xác thực được đăng ký quá mức
 
-If you are not nominating with a large number of DOTs, you should try to avoid
-[oversubscribed](../general/glossary.md#oversubscribed) validators. It is not always easy to calculate if the
-validator selected will be oversubscribed in the next session; one way to avoid choosing potentially
-oversubscribed validators is to filter out any that are [at capacity](../general/glossary.md#capacity) on the
-Targets page.
+Nếu bạn không được đề cử với một số lượng lớn DOT, bạn nên cố gắng tránh các trình xác thực đã đăng ký quá mức ([oversubscribed](../general/glossary.md#oversubscribed)). Không phải lúc nào cũng dễ dàng tính toán xem trình xác thực đã chọn có bị đăng ký quá mức trong phiên tiếp theo hay không; một cách để tránh chọn trình xác thực có khả năng đăng ký quá mức là lọc ra bất kỳ trình xác thực nào có khả năng ([at capacity](../general/glossary.md#capacity)) trên trang Targets.
 
-Finally, if you have a very small amount of DOTs, you may not be able to have your nomination fit
-into the election set. The nominator to validator mapping has to fit in a single block, and if there
-are too many nominators, the lowest-staked nominations will be dropped. This value is obviously
-dynamic and will vary over time. If you review the lowest amount of nominations that are occurring
-on current validators, you can get a good idea of how many DOTs will likely be necessary to have
-your nomination earn you rewards. You can read the blog post
-["Polkadot Staking: An Update"](https://polkadot.network/polkadot-staking-an-update/) for more
-details.
+Cuối cùng, nếu bạn có một số lượng DOT rất nhỏ, bạn có thể không có đề cử của mình phù hợp với bộ bầu cử. Ánh xạ từ đề cử đến trình xác thực phải vừa với một khối duy nhất và nếu có quá nhiều đề cử, các đề cử có giá trị thấp nhất sẽ bị loại bỏ. Giá trị này rõ ràng là động và sẽ thay đổi theo thời gian. Nếu bạn xem xét số lượng đề cử thấp nhất đang xảy ra trên các trình xác thực hiện tại, bạn có thể biết rõ về số lượng DOT có thể sẽ cần thiết để đề cử của bạn kiếm được phần thưởng cho bạn. Bạn có thể đọc bài đăng trên blog ["Polkadot Staking: An Update"](https://polkadot.network/polkadot-staking-an-update/) để biết thêm chi tiết.
 
-> These concepts have been further explained in the
+> Những khái niệm này đã được giải thích thêm trong
 > [Why Nominate on Polkadot & Kusama video](https://www.youtube.com/watch?v=weG_uzdSs1E&list=PLOyWqupZ-WGuAuS00rK-pebTMAOxW41W8&index=4)
-> and
+> và
 > [What to Consider when Nominating Validators on Polkadot and Kusama](https://www.youtube.com/watch?v=K-a4CgVchvU&list=PLOyWqupZ-WGuAuS00rK-pebTMAOxW41W8&index=9)
 > and
 > [Nominating/Staking on Polkadot and Kusama](https://youtu.be/FCXC0CDhyS4)
 
 ### Guides
 
-- [Be a Nominator (Polkadot)](../maintain/maintain-guides-how-to-nominate-polkadot.md) - Guide on nominating on
-  the Kusama canary network.
-- [Stop Being a Nominator (all networks)](../maintain/maintain-guides-how-to-unbond.md) - Guide on stopping
-  nominations and withdrawing tokens.
+- [Be a Nominator (Polkadot)](../maintain/maintain-guides-how-to-nominate-polkadot.md) - Hướng dẫn về việc đề cử trên mạng  Kusama.
+- [Stop Being a Nominator (all networks)](../maintain/maintain-guides-how-to-unbond.md) - Hướng dẫn về cách dừng đề cử và rút tiền mã thông báo.

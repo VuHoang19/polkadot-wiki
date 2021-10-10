@@ -6,60 +6,40 @@ description: Learn about how collators maintain the network.
 slug: ../learn-collator
 ---
 
-Collators maintain parachains by collecting parachain transactions from users and producing state
-transition proofs for Relay Chain validators. In other words, collators maintain parachains by
-aggregating parachain transactions into parachain block candidates and producing state transition
-proofs for validators based on those blocks.
+Collators (trình đối chiếu hay người đối chiếu) duy trì parachains bằng cách thu thập các giao dịch parachain từ người dùng và tạo bằng chứng chuyển đổi trạng thái cho trình xác thực Relay chain. Nói cách khác, các nhà đối chiếu duy trì các parachains bằng cách tổng hợp các giao dịch parachain thành các ứng cử viên khối parachain và tạo ra các bằng chứng chuyển đổi trạng thái cho các trình xác thực dựa trên các khối đó.
 
-Collators maintain a full node for the Relay Chain and a full node for their particular parachain;
-meaning they retain all necessary information to be able to author new blocks and execute
-transactions in much the same way as miners do on current PoW blockchains. Under normal
-circumstances, they will collate and execute transactions to create an unsealed block and provide
-it, together with a proof of state transition, to one or more validators responsible for proposing a
-parachain block.
+Collators duy trì một nút đầy đủ cho Relay chain và một nút đầy đủ cho parachain cụ thể của chúng; có nghĩa là họ giữ lại tất cả thông tin cần thiết để có thể tạo ra các khối mới và thực hiện các giao dịch giống như cách mà các thợ đào làm trên các blockchain PoW hiện tại. Trong các trường hợp bình thường, họ sẽ đối chiếu và thực hiện các giao dịch để tạo ra một khối chưa được niêm phong và cung cấp nó, cùng với bằng chứng chuyển đổi trạng thái, cho một hoặc nhiều trình xác thực chịu trách nhiệm đề xuất một khối parachain.
 
-Unlike validators, collator nodes do not secure the network. If a parachain block is invalid, it
-will get rejected by validators. Therefore the assumption that having more collators is better or
-more secure is not correct. On the contrary, too many collators may slow down the network. The only
-nefarious power collators have is transaction censorship. To prevent censorship, a parachain only
-needs to ensure that there exist some neutral collators - but not necessarily a majority. Theoretically,
-the censorship problem is solved with having just one honest collator.
+Không giống như trình xác thực, các nút đối chiếu không bảo mật mạng. Nếu một khối parachain không hợp lệ, nó sẽ bị trình xác nhận từ chối. Do đó, giả định rằng có nhiều máy đối chiếu là tốt hơn hoặc an toàn hơn là không đúng. Ngược lại, quá nhiều đối tác có thể làm chậm mạng. Những kẻ cấu kết quyền lực bất chính duy nhất có là kiểm duyệt giao dịch. Để ngăn chặn kiểm duyệt, parachain chỉ cần đảm bảo rằng tồn tại một số đối tác trung lập - nhưng không nhất thiết phải là đa số. Về mặt lý thuyết, vấn đề kiểm duyệt được giải quyết khi chỉ có một trình đối chiếu trung thực.
 
 ### XCM
 
-Collators are a key element of the
+Trình đối chiếu là yếu tố chính của
 [XCM (Cross-Consensus Message Passing Format)](learn-cross-consensus.md).
-By being full nodes of the Relay Chain, they are all aware of each other as peers. This makes it possible
-for them to send messages from parachain A to parachain B.
+Bằng cách là các nút đầy đủ của Relay chain, tất cả chúng đều nhận thức được nhau như các đồng nghiệp. Điều này giúp họ có thể gửi tin nhắn từ parachain A đến parachain B.
 
-## Taking the case for one Parachain
+## Lấy trường hợp cho một Parachain
 
-A start of a new block candidate is initiated with a block creation time. The collator aggregates all new transactions at the end of the process. When doing so, the collator signs the _parachain block candidate_ and produces state transition proofs, which are a summary of the final account balances caused by the transactions in the candidate block. The collator relays the candidate block and state transition proofs to the validators
-on-chain. The validators verify the transactions within the parachain block candidate. Upon verification, and if
-all is well, the validator shares the candidate block with the Relay Chain.
+Bắt đầu một ứng cử viên khối mới được bắt đầu với thời gian tạo khối. Trình đối chiếu tổng hợp tất cả các giao dịch mới vào cuối quá trình. Khi làm như vậy, trình đối chiếu ký tên vào ứng cử viên khối parachain và tạo ra bằng chứng chuyển đổi trạng thái, là bản tóm tắt về số dư tài khoản cuối cùng do các giao dịch trong khối ứng cử viên gây ra. Trình đối chiếu chuyển tiếp khối ứng cử viên và các bằng chứng chuyển đổi trạng thái tới trình xác thực trên chuỗi. Trình xác thực xác minh các giao dịch trong ứng cử viên khối parachain. Sau khi xác minh và nếu tất cả đều ổn, trình xác thực chia sẻ khối ứng viên với Relay chain.
 
-Parachain block candidates are collected together and a _Relay Chain block candidate_ is produced.
+Các ứng cử viên khối Parachain được thu thập cùng nhau và một ứng viên khối Relay được tạo ra.
 
 ![parachain candidate block diagram](../assets/polkadot-consensus-example-1.png)
 
-The validators on the network will try to reach a consensus on the Relay Chain block candidate. Upon reaching consensus, the now validated Relay Chain block candidate is shared with the validators and collators, and the process repeats for new transactions. A collator cannot continue building blocks on a parachain until the block candidate they proposed to the Relay Chain validators have been validated.
+Người xác nhận trên mạng sẽ cố gắng đạt được sự đồng thuận về ứng cử viên khối Relay chain. Sau khi đạt được sự đồng thuận, ứng cử viên khối Relay chain hiện đã được xác thực sẽ được chia sẻ với những người xác nhận và đối chiếu và quá trình lặp lại cho các giao dịch mới. Người đối chiếu không thể tiếp tục xây dựng khối trên parachain cho đến khi ứng viên khối mà họ đề xuất với trình xác thực Relay chain đã được xác thực.
 
 ![relay chain candidate block diagram](../assets/polkadot-consensus-example-2.png)
 
-A block is produced every 6 seconds.
+Cứ 6 giây lại có một khối được tạo ra.
 
 ## Collators in the Wild
 
-Blockchains that are built using Substrate are unable to hook onto the Relay Chain on their own.
-The Parity team built the [Cumulus library](https://github.com/paritytech/cumulus/) to address this.
-Collators are being used on the [Rococo](../build/build-parachains.md##testing-a-parachains:-rococo-testnet) testnet, and you can learn more
-about how they are used with Cumulus via the [Cumulus](https://github.com/paritytech/cumulus/)
-repository. More information can be found under the [Cumulus section](../build/build-parachains.md###cumulus) on
-the build parachain page.
+Các blockchains được xây dựng bằng Substrate không thể tự gắn vào Relay chain. Nhóm Parity đã xây dựng [Cumulus library](https://github.com/paritytech/cumulus/) để giải quyết vấn đề này.
+Collators đang được sử dụng trên [Rococo](../build/build-parachains.md##testing-a-parachains:-rococo-testnet) testnet, và bạn có thể tìm hiểu thêm về cách chúng được sử dụng với Cumulus thông qua [Cumulus](https://github.com/paritytech/cumulus/)
+repository. Thông tin thêm có thể được tìm thấy trong [Cumulus section](../build/build-parachains.md###cumulus) trên trang build parachain xây dựng.
 
 ## Guides and Tools
 
 - [Workshop covering Cumulus and Collators](https://substrate.dev/cumulus-workshop/)
 - [Rococo tesnet guide](../build/build-parachains.md##testing-a-parachains:-rococo-testnet)
-- [polkadot-launch](https://github.com/shawntabrizi/polkadot-launch) - a tool to quickly spin up a
-  local Polkadot testnet based on some parameters like number of parachains, collator setup, etc.
+- [polkadot-launch](https://github.com/shawntabrizi/polkadot-launch) - một công cụ để nhanh chóng tạo ra một mạng thử nghiệm Polkadot cục bộ dựa trên một số thông số như số lượng parachains, thiết lập đối chiếu, v.v.

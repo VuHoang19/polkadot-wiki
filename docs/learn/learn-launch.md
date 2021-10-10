@@ -5,75 +5,76 @@ sidebar_label: Polkadot Launch Phases
 description: An explanation of Polkadot's launch process and its individual phases.
 slug: ../learn-launch
 ---
-The Polkadot network has a phased roll-out plan, with important milestones toward decentralization
-marking each phase. Keep up-to-date with the Polkadot's phased roll-out plan at by viewing the
-[roadmap](https://polkadot.network/launch-roadmap/)
 
-**Current Phase: Parachain Rollout**
+Mạng Polkadot có kế hoạch triển khai theo từng giai đoạn, với các mốc quan trọng hướng tới phân cấp
+đánh dấu từng giai đoạn. Cập nhật kế hoạch triển khai theo từng giai đoạn của Polkadot tại bằng cách
+xem [roadmap](https://polkadot.network/launch-roadmap/)
 
-## The PoA Launch
+**Giai đoạn hiện tại: Parachain Rollout**
 
-The Genesis block of the Polkadot network was launched on May 26, 2020, as a Proof of Authority
-(PoA) network. Governance was restricted to the single Sudo (super-user) key, which was held by Web3
-Foundation to issue the commands and upgrades necessary to complete the launch process. During this
-time, validators started joining the network and signaling their intention to participate in
-consensus.
+## Khởi chạy PoA
+
+Khối Genesis của mạng Polkadot được khởi chạy vào ngày 26 tháng 5 năm 2020, như một mạng Proof of
+Authority (PoA). Tính năng quản trị bị hạn chế đối với khóa Sudo (siêu người dùng) duy nhất, do Web3
+Foundation nắm giữ để đưa ra các lệnh và nâng cấp cần thiết để hoàn tất quá trình khởi chạy. Trong
+thời gian này, người xác nhận bắt đầu tham gia mạng và báo hiệu ý định tham gia đồng thuận của họ.
 
 ## Nominated Proof of Stake
 
-Once Web3 Foundation was confident in the stability of the network and there was a sufficient number
-of validator intentions, Web3 Foundation used [Sudo](https://youtu.be/InekMjJpVdo) &mdash; a
-superuser account with access to governance functions &mdash; to initiate the first validator
-election. Following this election, the network transitioned from PoA into its second phase,
-[Nominated Proof of Stake (NPoS)](learn-staking.md), on June 18, 2020.
+Khi Web3 Foundation tin tưởng vào sự ổn định của mạng và có đủ số lượng người xác nhận ý định, Web3
+Foundation đã sử dụng [Sudo](https://youtu.be/InekMjJpVdo) &mdash; một tài khoản superuser có quyền
+truy cập vào các chức năng quản trị - để bắt đầu cuộc bầu cử người xác thực đầu tiên. Sau cuộc bầu
+cử này, mạng chuyển đổi từ PoA sang giai đoạn thứ hai,
+[Nominated Proof of Stake (NPoS)](learn-staking.md), vào ngày 18 tháng 6 năm 2020.
 
 ## Governance
 
-After the chain had been running well with the validator set, the Sudo key issued a runtime upgrade
-that enabled the suite of governance modules in Polkadot; namely, the modules to enable a
-[Council](learn-governance.md#council), a
-[Technical Committee](learn-governance.md#technical-committee), and
-[public referenda](learn-governance.md#public-referenda).
+Sau khi chuỗi hoạt động tốt với bộ trình xác thực, khóa Sudo đã đưa ra bản nâng cấp thời gian chạy
+cho phép bộ mô-đun quản trị trong Polkadot; cụ thể là các mô-đun để cho phép
+[Hội đồng](learn-governance.md#council), [Ủy ban kỹ thuật](learn-governance.md#technical-committee)
+và [cuộc trưng cầu ý kiến công khai](learn-governance.md#public-referenda).
 
 ## Removal of Sudo
 
-The Sudo module was removed by a runtime upgrade on July 20, 2020, transitioning the
-[governance](learn-governance.md) of the chain into the hands of the token (DOT) holders.
+Mô-đun Sudo đã bị loại bỏ bởi bản nâng cấp thời gian chạy vào ngày 20 tháng 7 năm 2020, chuyển
+[quyền quản lý](learn-governance.md) chuỗi vào tay của những người nắm giữ mã thông báo (DOT).
 
-From this point, the network has been entirely in the hands of the token holders and is no longer
-under control of any centralized authority.
+Kể từ thời điểm này, mạng lưới đã hoàn toàn nằm trong tay của những người nắm giữ mã thông báo và
+không còn chịu sự kiểm soát của bất kỳ cơ quan quản lý tập trung nào.
 
 ## Balance Transfers
 
-To enable balance transfers, the community [made a public proposal](../maintain/maintain-guides-democracy.md)
-for a runtime upgrade that lifted the restriction on balance transfers. Transfer functionality was
-subsequently enabled on Polkadot at block number 1_205_128 on August 18, 2020, at 16:39 UTC.
+Để cho phép chuyển số dư, cộng đồng đã đưa ra
+[một đề xuất công khai](../maintain/maintain-guides-democracy.md) về việc nâng cấp thời gian chạy
+nhằm dỡ bỏ hạn chế chuyển số dư. Sau đó, chức năng chuyển đã được bật trên Polkadot tại khối số
+1_205_128 vào ngày 18 tháng 8 năm 2020, lúc 16:39 UTC.
 
 ## Redenomination
 
-On August 21, 2020, [redenomination](../general/redenomination.md) of DOT, the native token on Polkadot,
-occurred. From this date, one DOT (old) equals 100 new DOT.
+Vào ngày 21 tháng 8 năm 2020, việc [xác định lại DOT](../general/redenomination.md), mã thông báo
+gốc trên Polkadot, đã xảy ra. Kể từ ngày này, một DOT (cũ) bằng 100 DOT mới.
 
 ## Core Functionality
 
-Polkadot is now moving to the next stage of opening up its core functionality, like parachain slot
-auctions, parathreads, and cross-chain message passing. Polkadot is now on track to launch several
-parachains in 2021. These upgrades will require runtime upgrades that will pass through Polkadot's
-normal governance processes. The core functionality does not have to be unlocked sequentially
-&mdash; several features can be unlocked with a single proposal.
+Polkadot hiện đang chuyển sang giai đoạn tiếp theo là mở ra chức năng cốt lõi của nó, như đấu giá vị
+trí parachain, parathreads và truyền thông điệp chuỗi chéo. Polkadot hiện đang trên đà ra mắt một số
+parachains vào năm 2021. Những nâng cấp này sẽ yêu cầu nâng cấp thời gian chạy sẽ thông qua các quy
+trình quản trị thông thường của Polkadot. Chức năng cốt lõi không phải được mở khóa tuần tự &mdash;
+một số tính năng có thể được mở khóa bằng một đề xuất duy nhất.
 
-Parachains will first roll out on Kusama with a common good parachain, followed by the first slot
-auction and winner's onboarding.
+Parachains đầu tiên sẽ triển khai trên Kusama với một parachain thông dụng, tiếp theo là đấu giá vị
+trí đầu tiên và giới thiệu người chiến thắng.
 
 ## Polkadot 2.0
 
-Researchers are in the midst of research for the next version of the Polkadot network. With many 
-questions yet to be answered, as of now, some big areas of research will be in:
+Các nhà nghiên cứu đang trong quá trình nghiên cứu phiên bản tiếp theo của mạng Polkadot. Với nhiều
+câu hỏi chưa được trả lời, cho đến nay, một số lĩnh vực nghiên cứu lớn:
 
-- Economics and Networking (Zero-Knowledge): How will scalability work in Polkadot 2.0?
-- Horizontal vs. Vertical scalability: What is the breaking point of the maximum number of
-  parachains built with horizontal scalability?
-- Nested Relay Chain: How can multiple Relay Chains exist connected through parachains? How many
-  tiers of Relay Chains can be nested? How will validators work together to validate blocks on
-  various Relay Chains? How does [XCM](learn-cross-consensus.md) work in the nested setup? How is
-  [AnV](learn-availability.md) going to work there?
+- Kinh tế và Mạng (Zero-Knowledge): Khả năng mở rộng sẽ hoạt động như thế nào trong Polkadot 2.0?
+- Khả năng mở rộng theo chiều ngang vs chiều dọc: Điểm phá vỡ của số lượng parachains tối đa được
+  xây dựng với khả năng mở rộng theo chiều ngang là gì?
+- Chuỗi chuyển tiếp lồng nhau: Làm thế nào để nhiều Chuỗi chuyển tiếp tồn tại được kết nối thông qua
+  các parachains? Có bao nhiêu bậc của Chuỗi chuyển tiếp có thể được lồng vào nhau? Trình xác thực
+  sẽ làm việc cùng nhau như thế nào để xác thực các khối trên các Chuỗi chuyển tiếp khác nhau?
+  [XCM](learn-cross-consensus.md) hoạt động như thế nào trong thiết lập lồng nhau?
+  [AnV](learn-availability.md) sẽ làm việc ở đó như thế nào?
