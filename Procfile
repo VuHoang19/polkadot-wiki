@@ -1,1 +1,1 @@
-web: yarn upgrade @docusaurus/core@latest @docusaurus/preset-classic@latest && yarn polkadot:start
+web: yarn upgrade @docusaurus/core@latest @docusaurus/preset-classic@latest && yarn generateRegistryTable; docusaurus start polkadot-wiki
