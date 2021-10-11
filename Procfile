@@ -1,1 +1,1 @@
-web: yarn upgrade @docusaurus/core@latest @docusaurus/preset-classic@latest && yarn generateRegistryTable --es-module-specifier-resolution=node && docusaurus start polkadot-wiki --es-module-specifier-resolution=node
+web: yarn upgrade @docusaurus/core@latest @docusaurus/preset-classic@latest && docusaurus start polkadot-wiki --es-module-specifier-resolution=node
