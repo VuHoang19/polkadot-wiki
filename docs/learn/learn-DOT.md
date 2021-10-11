@@ -181,8 +181,14 @@ Tìm hiểu thêm về Rococo trên
 
 ## Kusama Tokens
 
-Không giống như testnet DOT, token Kusama không được tặng miễn phí. Mã thông báo Kusama có sẵn thông qua quy trình xác nhận quyền sở hữu ([claims process](https://claim.kusama.network/)) (nếu bạn có DOT vào thời điểm hình thành Kusama) hoặc thông qua [Treasury](learn-treasury.md). Ngoài ra, chúng có thể được mua trên thị trường mở.
+Không giống như testnet DOT, token Kusama không được tặng miễn phí. Mã thông báo Kusama có sẵn thông
+qua quy trình xác nhận quyền sở hữu ([claims process](https://claim.kusama.network/)) (nếu bạn có
+DOT vào thời điểm hình thành Kusama) hoặc thông qua [Treasury](learn-treasury.md). Ngoài ra, chúng
+có thể được mua trên thị trường mở.
 
 ## Polkadot Mainnet DOT
 
-Polkadot Mainnet DOT không được tặng miễn phí. Nếu bạn đã mua DOT trong đợt ưu đãi ban đầu năm 2017, bạn có thể yêu cầu chúng thông qua quy trình xác nhận quyền sở hữu Polkadot ([Polkadot claims process](https://claims.polkadot.network/)). Ngoài ra, chúng có sẵn trên thị trường mở.
+Polkadot Mainnet DOT không được tặng miễn phí. Nếu bạn đã mua DOT trong đợt ưu đãi ban đầu năm 2017,
+bạn có thể yêu cầu chúng thông qua quy trình xác nhận quyền sở hữu Polkadot
+([Polkadot claims process](https://claims.polkadot.network/)). Ngoài ra, chúng có sẵn trên thị
+trường mở.

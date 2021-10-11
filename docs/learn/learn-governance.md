@@ -6,189 +6,193 @@ description: Learn about Polkadot's thought-through governance model.
 slug: ../learn-governance
 ---
 
-Polkadot uses a sophisticated governance mechanism that allows it to evolve gracefully overtime at
-the ultimate behest of its assembled stakeholders. The stated goal is to ensure that the majority of
-the stake can always command the network.
+Polkadot sử dụng một cơ chế quản trị tinh vi cho phép Polkadot phát triển ngoài giờ một cách linh
+hoạt theo yêu cầu cuối cùng của các bên liên quan đã tập hợp. Mục tiêu đã nêu là đảm bảo rằng phần
+lớn cổ phần luôn có thể chỉ huy mạng.
 
-To do this, we bring together various novel mechanisms, including an amorphous state-transition
-function stored on-chain and defined in a platform-neutral intermediate language (i.e.
-[WebAssembly](learn-wasm.md)) and several on-chain voting mechanisms such as referenda with adaptive
-super-majority thresholds and batch approval voting. All changes to the protocol must be agreed upon
-by stake-weighted referenda.
+Để làm được điều này, chúng tôi tập hợp nhiều cơ chế mới lạ khác nhau, bao gồm chức năng chuyển đổi
+trạng thái vô định hình được lưu trữ trên chuỗi và được xác định bằng ngôn ngữ trung gian trung lập
+nền tảng (i.e. [WebAssembly](learn-wasm.md)) và một số cơ chế bỏ phiếu trên chuỗi, chẳng hạn như
+tham khảo ý kiến với siêu đa số thích ứng ngưỡng và bỏ phiếu phê duyệt hàng loạt. Tất cả các thay
+đổi đối với giao thức phải được sự đồng ý của cuộc trưng cầu dân ý có tỷ trọng.
 
-## Mechanism
+## Cơ chế
 
-To make any changes to the network, the idea is to compose active token holders and the council
-together to administrate a network upgrade decision. No matter whether the proposal is proposed by
-the public (token holders) or the council, it finally will have to go through a referendum to let
-all holders, weighted by stake, make the decision.
+Để thực hiện bất kỳ thay đổi nào đối với mạng, ý tưởng là tập hợp các chủ sở hữu mã thông báo đang
+hoạt động và hội đồng cùng quản lý quyết định nâng cấp mạng. Bất kể đề xuất được đề xuất bởi công
+chúng (chủ sở hữu mã thông báo) hay hội đồng, cuối cùng nó sẽ phải trải qua một cuộc trưng cầu dân ý
+để cho phép tất cả những người nắm giữ, tính theo tỷ trọng, đưa ra quyết định.
 
-To better understand how the council is formed, please read [this section](#council).
+Để hiểu rõ hơn về cách thức thành lập hội đồng, vui lòng đọc [phần này](#council).
 
-## Referenda
+## Trọng tài
 
-Referenda are simple, inclusive, stake-based voting schemes. Each referendum has a specific
-_proposal_ associated with it that takes the form of a privileged function call in the runtime (that
-includes the most powerful call: `set_code`, which can switch out the entire code of the runtime,
-achieving what would otherwise require a "hard fork").
+Trọng tài là các chương trình bỏ phiếu đơn giản, toàn diện, dựa trên cổ phần. Mỗi cuộc trưng cầu có
+một đề xuất cụ thể được liên kết với nó có dạng một lệnh gọi hàm đặc quyền trong thời gian chạy (bao
+gồm lệnh gọi mạnh mẽ nhất: `set_code`, có thể chuyển ra toàn bộ mã của thời gian chạy, đạt được điều
+mà nếu không sẽ yêu cầu "hard fork").
 
-Referenda are discrete events, have a fixed period where voting happens, and then are tallied and
-the function call is made if the vote is approved. Referenda are always binary; your only options in
-voting are "aye", "nay", or abstaining entirely.
+Trọng tài là các sự kiện rời rạc, có một khoảng thời gian cố định nơi biểu quyết xảy ra, sau đó được
+đánh dấu và lệnh gọi hàm được thực hiện nếu biểu quyết được chấp thuận. Trọng tài luôn luôn là nhị
+phân; lựa chọn duy nhất của bạn trong việc bỏ phiếu là "aye", "nay" hoặc bỏ phiếu trắng hoàn toàn.
 
-Referenda can be started in one of several ways:
+Có thể bắt đầu cuộc trưng cầu bằng một trong những cách sau:
 
-- Publicly submitted proposals;
-- Proposals submitted by the council, either through a majority or unanimously;
-- Proposals submitted as part of the enactment of a prior referendum;
-- Emergency proposals submitted by the Technical Committee and approved by the Council.
+- Các đề xuất được đệ trình công khai;
+- Các đề xuất do hội đồng đệ trình, thông qua đa số hoặc nhất trí;
+- Các đề xuất được đệ trình như một phần của việc ban hành một cuộc trưng cầu dân ý trước đó;
+- Đề xuất khẩn cấp do Ủy ban kỹ thuật đệ trình và được Hội đồng chấp thuận.
 
-All referenda have an _enactment delay_ associated with them. This is the period between the
-referendum ending and, assuming the proposal was approved, the changes being enacted. For the first
-two ways that a referendum is launched, this is a fixed time. For Kusama, it is 8 days; in Polkadot,
-it is 28 days. For the third type, it can be set as desired.
+Đề xuất khẩn cấp do Ủy ban kỹ thuật đệ trình và được Hội đồng chấp thuận. Tất cả các cuộc trưng cầu
+đều có độ trễ ban hành liên quan đến chúng. Đây là khoảng thời gian giữa cuộc trưng cầu dân ý kết
+thúc và, giả sử đề xuất đã được thông qua, các thay đổi sẽ được ban hành. Đối với hai cách đầu tiên
+mà một cuộc trưng cầu dân ý được đưa ra, đây là thời gian cố định. Đối với Kusama, đó là 8 ngày; ở
+Polkadot, đó là 28 ngày. Đối với loại thứ ba, nó có thể được thiết lập như mong muốn.
 
-Emergency proposals deal with major problems with the network that need to be "fast-tracked". These
-will have a shorter enactment time.
+Các đề xuất khẩn cấp giải quyết các vấn đề lớn với mạng cần được "theo dõi nhanh". Những điều này sẽ
+có thời gian ban hành ngắn hơn.
 
-### Proposing a Referendum
+### Đề xuất Trưng cầu dân ý
 
-#### Public Referenda
+#### Chương trình trưng cầu công khai
 
-Anyone can propose a referendum by depositing the minimum amount of tokens for a certain period
-(number of blocks). If someone agrees with the proposal, they may deposit the same amount of tokens
-to support it - this action is called _seconding_. The proposal with the highest amount of bonded
-support will be selected to be a referendum in the next voting cycle.
+Bất kỳ ai cũng có thể đề xuất một cuộc trưng cầu dân ý bằng cách gửi số lượng mã thông báo tối thiểu
+trong một khoảng thời gian nhất định (số khối). Nếu ai đó đồng ý với đề xuất, họ có thể gửi cùng một
+lượng mã thông báo để hỗ trợ nó - hành động này được gọi là biệt phái. Đề xuất có mức hỗ trợ ngoại
+quan cao nhất sẽ được lựa chọn để đưa ra trưng cầu dân ý trong chu kỳ bỏ phiếu tiếp theo.
 
-Note that this may be different from the absolute number of seconds; for instance, three accounts
-bonding 20 DOT each would "outweigh" ten accounts bonding a single DOT each. The bonded tokens will
-be released once the proposal is tabled (that is, brought to a vote).
+Lưu ý rằng điều này có thể khác với số giây tuyệt đối; ví dụ: ba tài khoản liên kết 20 DOT, mỗi tài
+khoản sẽ "lớn hơn" mười tài khoản liên kết một DOT mỗi tài khoản. Các mã thông báo ngoại quan sẽ
+được phát hành sau khi đề xuất được lập bảng (nghĩa là được đưa ra biểu quyết).
 
-There can be a maximum of 100 public proposals in the proposal queue.
+Có thể có tối đa 100 đề xuất công khai trong hàng đợi đề xuất.
 
-#### Council Referenda
+#### Hội đồng Trọng tài
 
-Unanimous Council - When all members of the council agree on a proposal, it can be moved to a
-referendum. This referendum will have a negative turnout bias (that is, the smaller the amount of
-stake voting, the smaller the amount necessary for it to pass - see "Adaptive Quorum Biasing",
-below).
+Hội đồng nhất trí - Khi tất cả các thành viên của hội đồng đồng ý về một đề xuất, nó có thể được
+chuyển sang một cuộc trưng cầu dân ý. Cuộc trưng cầu dân ý này sẽ có thành kiến ​​tiêu cực về số cử
+tri đi bỏ phiếu (nghĩa là số lượng cổ phần biểu quyết càng nhỏ thì số tiền cần thiết để nó được
+thông qua càng nhỏ - xem "Xu hướng số lượng thích ứng", bên dưới).
 
-Majority Council - When agreement from only a simple majority of council members occurs, the
-referendum can also be voted upon, but it will be majority-carries (51% wins).
+Hội đồng đa số - Khi chỉ có đa số thành viên hội đồng đồng ý, cuộc trưng cầu dân ý cũng có thể được
+biểu quyết, nhưng nó sẽ mang tính đa số (51% thắng).
 
-There can only be one active referendum at any given time, except when there is also an emergency
-referendum in progress.
+Chỉ có thể có một cuộc trưng cầu dân ý đang hoạt động tại bất kỳ thời điểm nào, ngoại trừ trường hợp
+cũng có một cuộc trưng cầu khẩn cấp đang diễn ra.
 
-#### Voting Timetable
+#### Thời khóa biểu biểu quyết
 
-Every 28 days on Polkadot or 7 days on Kusama, a new referendum will come up for a vote, assuming
-there is at least one proposal in one of the queues. There is a queue for Council-approved proposals
-and a queue for publicly submitted proposals. The referendum to be voted upon alternates between the
-top proposal in the two queues.
+Cứ sau 28 ngày ở Polkadot hoặc 7 ngày ở Kusama, một cuộc trưng cầu dân ý mới sẽ được đưa ra để bỏ
+phiếu, giả sử có ít nhất một đề xuất trong một trong các hàng đợi. Có một hàng đợi cho các đề xuất
+được Hội đồng phê duyệt và một hàng đợi cho các đề xuất được gửi công khai. Cuộc trưng cầu dân ý sẽ
+được biểu quyết thay thế giữa đề xuất hàng đầu trong hai hàng đợi.
 
-The "top" proposal is determined by the amount of stake bonded behind it. If the given queue whose
-turn it is to create a referendum that has no proposals (is empty), and proposals are waiting in the
-other queue, the top proposal in the other queue will become a referendum.
+Đề xuất "hàng đầu" được xác định bởi số lượng cổ phần liên quan đằng sau nó. Nếu hàng đợi đã cho mà
+đến lượt nó tạo ra một cuộc trưng cầu dân ý không có đề xuất nào (trống) và các đề xuất đang chờ
+trong hàng đợi khác, thì đề xuất hàng đầu trong hàng kia sẽ trở thành một cuộc trưng cầu dân ý.
 
-Multiple referenda cannot be voted upon in the same period, excluding emergency referenda. An
-emergency referendum occurring at the same time as a regular referendum (either public- or
-council-proposed) is the only time that multiple referenda will be able to be voted on at once.
+Nhiều cuộc trưng cầu không thể được biểu quyết trong cùng một khoảng thời gian, ngoại trừ cuộc trưng
+cầu khẩn cấp. Một cuộc trưng cầu khẩn cấp xảy ra cùng lúc với một cuộc trưng cầu thông thường (công
+khai hoặc do hội đồng đề xuất) là lần duy nhất mà nhiều cuộc trưng cầu dân ý có thể được biểu quyết
+cùng một lúc.
 
-#### Voting on a referendum
+#### Bỏ phiếu trong cuộc trưng cầu dân ý
 
-To vote, a voter generally must lock their tokens up for at least the enactment delay period beyond
-the end of the referendum. This is in order to ensure that some minimal economic buy-in to the
-result is needed and to dissuade vote selling.
+Để bỏ phiếu, người bỏ phiếu thường phải khóa mã thông báo của họ trong ít nhất khoảng thời gian trì
+hoãn ban hành sau khi kết thúc cuộc trưng cầu dân ý. Điều này là để đảm bảo rằng cần phải có một số
+lợi nhuận kinh tế tối thiểu để đạt được kết quả và ngăn cản việc bán phiếu bầu.
 
-It is possible to vote without locking at all, but your vote is worth a small fraction of a normal
-vote, given your stake. At the same time, holding only a small amount of tokens does not mean that
-the holder cannot influence the referendum result, thanks to time-locking. You can read more about
-this at [Voluntary Locking](#voluntary-locking).
+Bạn hoàn toàn có thể bỏ phiếu mà không bị khóa, nhưng phiếu bầu của bạn chỉ có giá trị bằng một phần
+nhỏ của phiếu bầu thông thường, với số tiền đặt cọc của bạn. Đồng thời, chỉ nắm giữ một lượng nhỏ mã
+thông báo không có nghĩa là người nắm giữ không thể ảnh hưởng đến kết quả trưng cầu dân ý, nhờ vào
+khóa thời gian. Bạn có thể đọc thêm về điều này tại [Voluntary Locking](#voluntary-locking).
 
-> To learn more about voting on referenda, please check out our
-> [technical explainer video](https://www.youtube.com/watch?v=BkbhhlsezGA&list=PLOyWqupZ-WGuAuS00rK-pebTMAOxW41W8&index=31&ab_channel=Polkadot).
+> Để tìm hiểu thêm về bỏ phiếu trong cuộc trưng cầu, vui lòng xem
+> [video giải thích kỹ thuật của chúng tôi](https://www.youtube.com/watch?v=BkbhhlsezGA&list=PLOyWqupZ-WGuAuS00rK-pebTMAOxW41W8&index=31&ab_channel=Polkadot).
 
 ```
-Example:
+Thí dụ:
 
-Peter: Votes `No` with 10 DOT for a 128 week lock period  => 10 * 6 = 60 Votes
+Peter: Bỏ phiếu `Không` với 10 DOT trong khoảng thời gian khóa 128 tuần => 10 * 6 = 60 Phiếu bầu
 
-Logan: Votes `Yes` with 20 DOT for a 4 week lock period => 20 * 1 = 20 Votes
+Logan: Phiếu bầu `Có` với 20 DOT trong thời gian khóa 4 tuần => 20 * 1 = 20 Phiếu bầu
 
-Kevin: Votes `Yes` with 15 DOT for a 8 week lock period => 15 * 2 = 30 Votes
+Kevin: Bỏ phiếu `Có` với 15 DOT trong thời gian khóa 8 tuần => 15 * 2 = 30 Phiếu bầu
 ```
 
-Even though combined both Logan and Kevin vote with more DOT than Peter, the lock period for both of
-them is less than Peter, leading to their voting power counting as less.
+Mặc dù kết hợp cả Logan và Kevin bỏ phiếu với nhiều DOT hơn Peter, thời gian khóa cho cả hai người
+ít hơn Peter, dẫn đến việc kiểm phiếu của họ ít hơn.
 
 #### Tallying
 
-Depending on which entity proposed the proposal and whether all council members voted yes, there are
-three different scenarios. We can use the following table for reference.
+Tùy thuộc vào thực thể nào đưa ra đề xuất và liệu tất cả các thành viên hội đồng có bỏ phiếu đồng ý
+hay không, có ba kịch bản khác nhau. Chúng ta có thể sử dụng bảng sau để tham khảo.
 
-|          **Entity**          |                   **Metric**                   |
-| :--------------------------: | :--------------------------------------------: |
-|            Public            | Positive Turnout Bias (Super-Majority Approve) |
-| Council (Complete agreement) | Negative Turnout Bias (Super-Majority Against) |
-| Council (Majority agreement) |                Simple Majority                 |
+|            **Entity**            |                                  **Metric**                                   |
+| :------------------------------: | :---------------------------------------------------------------------------: |
+|            Công khai             |   Xu hướng cử tri tích cực (Phê duyệt siêu đa số) (Positive Turnout Bias )    |
+| Hội đồng (Hoàn thành đồng thuận) | Xu hướng tỷ lệ cử tri tiêu cực (Siêu đa số chống lại) (Negative Turnout Bias) |
+|   Hội đồng (Thỏa thuận đa số)    |                       Đa số đơn giản (Simple Majority)                        |
 
-Also, we need the following information and apply one of the formulas listed below to calculate the
-voting result. For example, let's use the public proposal as an example, so the
-`Super-Majority Approve` formula will be applied. There is no strict quorum, but the super-majority
-required increases with lower turnout.
+Ngoài ra, chúng tôi cần thông tin sau và áp dụng một trong các công thức được liệt kê bên dưới để
+tính toán kết quả bỏ phiếu. Ví dụ: hãy sử dụng đề xuất công khai làm ví dụ, vì vậy công thức Phê
+duyệt Siêu đa số sẽ được áp dụng. Không có số đại biểu nghiêm ngặt, nhưng yêu cầu siêu đa số sẽ tăng
+lên khi số cử tri đi bỏ phiếu thấp hơn.
 
 ```
-approve - the number of aye votes
+chấp thuận - số phiếu thuận
 
-against - the number of nay votes
+chống lại - số phiếu này
 
-turnout - the total number of voting tokens (does not include conviction)
+cử tri đi bỏ phiếu - tổng số mã thông báo biểu quyết (không bao gồm xác tín)
 
-electorate - the total number of DOT tokens issued in the network
+bầu cử - tổng số mã thông báo DOT được phát hành trong mạng
 ```
 
-##### Super-Majority Approve
+##### Phê duyệt Siêu đa số
 
-A `positive turnout bias`, whereby a heavy super-majority of aye votes is required to carry at low
-turnouts, but as turnout increases towards 100%, it becomes a simple majority-carries as below.
+Một khuynh hướng cử tri đi bỏ phiếu tích cực, theo đó, một siêu đa số phiếu ủng hộ lớn được yêu cầu
+thực hiện ở tỷ lệ cử tri đi bỏ phiếu thấp, nhưng khi tỷ lệ cử tri đi bầu tăng lên 100%, nó trở thành
+một đa số phiếu đơn giản như dưới đây.
 
 ![](https://latex.codecogs.com/svg.latex?\large&space;{against&space;\over&space;\sqrt{turnout}}&space;<&space;{approve&space;\over&space;\sqrt{electorate}})
 
-##### Super-Majority Against
+##### Siêu đa số chống lại
 
-A `negative turnout bias`, whereby a heavy super-majority of nay votes is required to reject at low
-turnouts, but as turnout increases towards 100%, it becomes a simple majority-carries as below.
+Một khuynh hướng tiêu cực về số cử tri đi bỏ phiếu, theo đó, phải có siêu đa số phiếu ủng hộ từ chối
+ở tỷ lệ cử tri đi bỏ phiếu thấp, nhưng khi tỷ lệ cử tri đi bầu tăng lên 100%, nó trở thành đa số
+phiếu đơn giản như dưới đây.
 
 ![](https://latex.codecogs.com/svg.latex?\large&space;{against&space;\over&space;\sqrt{electorate}}&space;<&space;{approve&space;\over&space;\sqrt{turnout}})
 
-##### Simple-Majority
+##### Đa số đơn giản
 
-Majority-carries, a simple comparison of votes; if there are more aye votes than nay, then the
-proposal is carried, no matter how much stake votes on the proposal.
+Đa số mang, một so sánh đơn giản của các phiếu bầu; nếu có nhiều phiếu ủng hộ hơn nay, thì đề xuất
+được thực hiện, bất kể số phiếu cổ phần đối với đề xuất là bao nhiêu.
 
 ![](https://latex.codecogs.com/svg.latex?\large&space;{approve}&space;>&space;{against})
 
-_To know more about where these above formulas come from, please read the
+_Để biết thêm về nguồn gốc của các công thức trên, vui lòng đọc
 [democracy pallet](https://github.com/paritytech/substrate/blob/master/frame/democracy/src/vote_threshold.rs)_.
 
 ```
-Example:
+Thí dụ:
 
-Assume:
-- We only have 1_500 DOT tokens in total.
-- Public proposal
+Cho rằng:
+- Tổng cộng chúng tôi chỉ có 1_500 mã thông báo DOT.
+- Đề xuất công khai
 
-John  - 500 DOT
+John - 500 DOT
 Peter - 100 DOT
 Lilly - 150 DOT
-JJ    - 150 DOT
-Ken   - 600 DOT
+JJ - 150 ĐIỂM
+Ken - 600 DOT
 
-John: Votes `Yes` for a 4 week lock period  => 500 * 1 = 500 Votes
+John: Số phiếu bầu `Có` trong thời gian khóa 4 tuần => 500 * 1 = 500 Phiếu bầu
 
-Peter: Votes `Yes` for a 4 week lock period => 100 * 1 = 100 Votes
+Peter: Số phiếu bầu `Có` trong thời gian khóa 4 tuần => 100 * 1 = 100 Phiếu bầu
 
-JJ: Votes `No` for a 16 week lock period => 150 * 3 = 450 Votes
+JJ: Bỏ phiếu `Không` cho thời gian khóa 16 tuần => 150 * 3 = 450 phiếu bầu
 
 approve = 600
 against = 450
@@ -200,26 +204,25 @@ electorate = 1500
 
 ![\Large {16.432}&space;<&space;{15.492}](https://latex.codecogs.com/svg.latex?\large&space;{16.432}&space;<&space;{15.492})
 
-Since the above example is a public referendum, `Super-Majority Approve` would be used to calculate
-the result. `Super-Majority Approve` requires more `aye` votes to pass the referendum when turnout
-is low, therefore, based on the above result, the referendum will be rejected. In addition, only the
-winning voter's tokens are locked. If the voters on the losing side of the referendum believe that
-the outcome will have negative effects, their tokens are transferrable so they will not be locked
-into the decision. Moreover, winning proposals are autonomously enacted only after some enactment
-period.
+Vì ví dụ trên là một cuộc trưng cầu dân ý công khai, Phê duyệt Siêu đa số sẽ được sử dụng để tính
+toán kết quả. Phê duyệt Siêu đa số yêu cầu nhiều phiếu ủng hộ hơn để thông qua cuộc trưng cầu dân ý
+khi tỷ lệ cử tri đi bầu thấp, do đó, dựa trên kết quả trên, cuộc trưng cầu dân ý sẽ bị từ chối.
+Ngoài ra, chỉ có mã thông báo của người bỏ phiếu chiến thắng mới bị khóa. Nếu các cử tri ở bên thua
+cuộc trong cuộc trưng cầu dân ý tin rằng kết quả sẽ có tác động tiêu cực, thì mã thông báo của họ có
+thể chuyển nhượng được vì vậy họ sẽ không bị khóa vào quyết định. Hơn nữa, các đề xuất đoạt giải chỉ
+được ban hành một cách tự chủ sau một số thời gian ban hành.
 
-#### Voluntary Locking
+#### Khóa tự nguyện
 
-Polkadot utilizes an idea called `Voluntary Locking` that allows token holders to increase their
-voting power by declaring how long they are willing to lock up their tokens, hence, the number of
-votes for each token holder will be calculated by the following formula:
+Polkadot sử dụng một ý tưởng có tên là Khóa tự nguyện cho phép chủ sở hữu mã thông báo tăng quyền
+biểu quyết của họ bằng cách tuyên bố thời gian họ sẵn sàng khóa mã thông báo của mình, do đó, số
+phiếu bầu cho mỗi chủ sở hữu mã thông báo sẽ được tính theo công thức sau:
 
 ```
 votes = tokens * conviction_multiplier
 ```
 
-The conviction multiplier increases the vote multiplier by one every time the number of lock periods
-double.
+Hệ số xác tín tăng hệ số phiếu bầu lên một khi số thời gian khóa tăng gấp đôi.
 
 | Lock Periods | Vote Multiplier |
 | :----------: | :-------------: |
@@ -231,98 +234,100 @@ double.
 |      16      |        5        |
 |      32      |        6        |
 
-The maximum number of "doublings" of the lock period is set to 6 (and thus 32 lock periods in
-total), and one lock period equals 28 days on Polkadot and 8 days on Kusama. Only doublings are
-allowed; you cannot lock for, say, 24 periods and increase your conviction by 5.5, for instance.
+Số lần "nhân đôi" tối đa của khoảng thời gian khóa được đặt thành 6 (và do đó có tổng cộng 32 đợt
+khóa) và một khoảng thời gian khóa tương đương với 28 ngày đối với Polkadot và 8 ngày đối với
+Kusama. Chỉ nhân đôi được phép; chẳng hạn, bạn không thể khóa 24 kỳ và tăng số lần kết án của bạn
+lên 5,5.
 
-While a token is locked, you can still use it for voting and staking; you are only prohibited from
-transferring these tokens to another account.
+Trong khi mã thông báo bị khóa, bạn vẫn có thể sử dụng nó để bỏ phiếu và đặt cược; bạn chỉ bị cấm
+chuyển các mã thông báo này sang tài khoản khác.
 
-Votes are still "counted" at the same time (at the end of the voting period), no matter for how long
-the tokens are locked.
+Các phiếu bầu vẫn được "tính" cùng một lúc (khi kết thúc thời gian biểu quyết), bất kể mã thông báo
+bị khóa trong bao lâu.
 
-#### Adaptive Quorum Biasing
+#### Xu hướng số đại biểu thích ứng
 
-Polkadot introduces a concept, "Adaptive Quorum Biasing", which functions as a lever that the
-council can use to alter the effective super-majority required to make it easier or more difficult
-for a proposal to pass in the case that there is no clear majority of voting power backing it or
-against it.
+Polkadot đưa ra một khái niệm, "Xu hướng số lượng thích ứng", có chức năng như một đòn bẩy mà hội
+đồng có thể sử dụng để thay đổi siêu đa số hiệu quả cần thiết để làm cho đề xuất được thông qua dễ
+dàng hơn hoặc khó khăn hơn trong trường hợp không có đa số rõ ràng. quyền biểu quyết ủng hộ nó hoặc
+chống lại nó.
 
 ![](../assets/governance/adaptive-quorum-biasing.png)
 
-Let's use the above image as an example.
+Hãy sử dụng hình ảnh trên làm ví dụ.
 
-If a publicly submitted referendum only has a 25% turnout, the tally of "aye" votes has to reach 66%
-for it to pass since we applied `Positive Turnout Bias`.
+Nếu một cuộc trưng cầu dân ý được đệ trình công khai chỉ có 25% cử tri đi bỏ phiếu, thì tổng số
+phiếu "ủng hộ" phải đạt 66% mới được thông qua vì chúng tôi áp dụng Chế độ Xu hướng Cử tri Tích cực.
 
-In contrast, when it has a 75% turnout, the tally of "aye" votes has to reach 54%, which means that
-the super-majority required decreases as the turnout increases.
+Ngược lại, khi nó có 75% cử tri đi bỏ phiếu, tổng số phiếu "aye" phải đạt 54%, có nghĩa là yêu cầu
+siêu đa số giảm khi số cử tri đi bỏ phiếu tăng lên.
 
-When the council proposes a new proposal through unanimous consent, the referendum would be put to a
-vote using "Negative Turnout Bias". In this case, it is easier to pass this proposal with low
-turnout and requires a super-majority to reject. As more token holders participate in voting, the
-bias approaches a plain majority carries.
+Khi hội đồng đưa ra một đề xuất mới thông qua sự đồng ý nhất trí, cuộc trưng cầu dân ý sẽ được đưa
+ra biểu quyết bằng cách sử dụng "Xu hướng cử tri phủ định". Trong trường hợp này, việc thông qua đề
+xuất này dễ dàng hơn với tỷ lệ cử tri đi bỏ phiếu thấp và yêu cầu siêu đa số từ chối. Khi nhiều
+người nắm giữ mã thông báo tham gia bỏ phiếu hơn, xu hướng tiếp cận với đa số rõ ràng.
 
-Referring to the above image, when a referendum only has 25% turnout, the tally of "aye" votes has
-to reach 34% for it to pass.
+Liên quan đến hình ảnh trên, khi một cuộc trưng cầu dân ý chỉ có 25% cử tri đi bầu, việc kiểm phiếu
+"aye" phải đạt 34% mới được thông qua.
 
-In short, when the turnout rate is low, a super-majority is required to reject the proposal, which
-means a lower threshold of "aye" votes have to be reached, but as turnout increases towards 100%, it
-becomes a simple majority.
+Nói tóm lại, khi tỷ lệ cử tri đi bỏ phiếu thấp, một siêu đa số bắt buộc phải từ chối đề xuất, có
+nghĩa là phải đạt đến ngưỡng thấp hơn về số phiếu "thuận lợi", nhưng khi tỷ lệ cử tri đi bầu tăng
+lên 100%, nó sẽ trở thành đa số đơn giản.
 
-All three tallying mechanisms - majority carries, super-majority approve, and super-majority
-against - equate to a simple majority-carries system at 100% turnout.
+Tất cả ba cơ chế kiểm đếm - đa số thực hiện, siêu đa số tán thành và siêu đa số chống lại - tương
+đương với một hệ thống kiểm đếm đơn giản với tỷ lệ cử tri đi bỏ phiếu là 100%.
 
-## Council
+## Hội đồng
 
-> [Video explainer on Council](https://www.youtube.com/watch?v=837Vv3gdRzI)
+> [Video giải thích Hội đồng](https://www.youtube.com/watch?v=837Vv3gdRzI)
 
-To represent passive stakeholders, Polkadot introduces the idea of a "council". The council is an
-on-chain entity comprising several actors, each represented as an on-chain account. On Polkadot, the
-council currently consists of 13 members. This is expected to increase over the next few months to
-24 seats. In general, the council will end up having a fixed number of seats. On Polkadot, this will
-be 24 seats while on Kusama it is 19 seats.
+Để đại diện cho các bên liên quan thụ động, Polkadot giới thiệu ý tưởng về một "hội đồng". Hội đồng
+là một thực thể trên chuỗi bao gồm một số tác nhân, mỗi thành viên được đại diện như một tài khoản
+trên chuỗi. Trên Polkadot, hội đồng hiện bao gồm 13 thành viên. Con số này dự kiến ​​sẽ tăng lên 24
+chỗ trong vài tháng tới. Nói chung, hội đồng sẽ có một số ghế cố định. Trên Polkadot, đây sẽ là 24
+chỗ trong khi trên Kusama là 19 chỗ.
 
-Along with [controlling the treasury](learn-treasury.md), the council is called upon primarily for
-three tasks of governance: proposing sensible referenda, cancelling uncontroversially dangerous or
-malicious referenda, and electing the technical committee.
+Cùng với [kiểm soát kho bạc](learn-treasury.md), hội đồng được kêu gọi chủ yếu cho ba nhiệm vụ quản
+trị: đề xuất các cuộc trưng cầu hợp lý, hủy bỏ cuộc trưng cầu nguy hiểm hoặc độc hại không kiểm soát
+được và bầu ra ủy ban kỹ thuật.
 
-For a referendum to be proposed by the council, a strict majority of members must be in favor, with
-no member exercising a veto. Vetoes may be exercised only once by a member for any single proposal;
-if, after a cool-down period, the proposal is resubmitted, they may not veto it a second time.
+Để một cuộc trưng cầu dân ý được đề xuất bởi hội đồng, phải có đa số thành viên ủng hộ, không có
+thành viên nào thực hiện quyền phủ quyết. Quyền phủ quyết chỉ có thể được thực hiện một lần bởi một
+thành viên đối với bất kỳ đề xuất nào; nếu sau một thời gian hạ nhiệt, đề xuất được gửi lại, họ có
+thể không phủ quyết lần thứ hai.
 
-Council motions which pass with a 3/5 (60%) super-majority - but without reaching unanimous
-support - will move to a public referendum under a neutral, majority-carries voting scheme. In the
-case that all members of the council vote in favor of a motion, the vote is considered unanimous and
-becomes a referendum with negative adaptive quorum biasing.
+Các động thái của hội đồng được thông qua với tỷ lệ siêu đa số 3/5 (60%) - nhưng không đạt được sự
+ủng hộ nhất trí - sẽ chuyển sang một cuộc trưng cầu dân ý công khai theo một sơ đồ bỏ phiếu trung
+lập, mang đa số. Trong trường hợp tất cả các thành viên của hội đồng bỏ phiếu ủng hộ một đề nghị,
+biểu quyết được coi là nhất trí và trở thành một cuộc trưng cầu dân ý với xu hướng số đại biểu thích
+ứng tiêu cực.
 
-### Canceling
+### Đang hủy
 
-A proposal can be canceled if the [technical committee](#technical-committee) unanimously agrees to
-do so, or if Root origin (e.g. sudo) triggers this functionality. A canceled proposal's deposit is
-burned.
+Một đề xuất có thể bị hủy nếu [ủy ban kỹ thuật](#technical-committee) hất trí làm như vậy hoặc nếu
+Root (ví dụ: sudo) kích hoạt chức năng này. Khoản đặt cọc của đề xuất bị hủy bỏ sẽ bị đốt cháy.
 
-Additionally, a two-thirds majority of the council can cancel a referendum. This may function as a
-last-resort if there is an issue found late in a referendum's proposal such as a bug in the code of
-the runtime that the proposal would institute.
+Ngoài ra, đa số hai phần ba của hội đồng có thể hủy bỏ một cuộc trưng cầu dân ý. Điều này có thể
+hoạt động như một phương sách cuối cùng nếu có một vấn đề được phát hiện muộn trong đề xuất của cuộc
+trưng cầu dân ý, chẳng hạn như một lỗi trong mã thời gian chạy mà đề xuất sẽ đưa ra.
 
-If the cancellation is controversial enough that the council cannot get a two-thirds majority, then
-it will be left to the stakeholders _en masse_ to determine the fate of the proposal.
+Nếu việc hủy bỏ gây tranh cãi đến mức hội đồng không thể có được đa số hai phần ba, thì các bên liên
+quan sẽ toàn quyền quyết định số phận của đề xuất.
 
-### Blacklisting
+### Danh sách đen
 
-A proposal can be blacklisted by Root origin (e.g. sudo). A blacklisted proposal and its related
-referendum (if any) is immediately [canceled](#canceling). Additionally, a blacklisted proposal's
-hash cannot re-appear in the proposal queue. Blacklisting is useful when removing erroneous
-proposals that could be submitted with the same hash, i.e.
-[proposal #2](https://polkascan.io/polkadot/democracy/proposal/2) in which the submitter used plain
-text to make a suggestion.
+Một đề xuất có thể được đưa vào danh sách đen bởi Root (ví dụ: sudo). Một đề xuất được đưa vào danh
+sách đen và cuộc trưng cầu dân ý liên quan (nếu có) sẽ bị [hủy bỏ](#canceling) ngay lập tức. Ngoài
+ra, hàm băm của đề xuất nằm trong danh sách cấm không thể xuất hiện lại trong hàng đợi đề xuất. Danh
+sách đen rất hữu ích khi loại bỏ các đề xuất sai có thể được gửi với cùng một hàm băm, tức
+[đề xuất số 2](https://polkascan.io/polkadot/democracy/proposal/2) trong đó người gửi đã sử dụng văn
+bản thuần túy để đưa ra đề xuất.
 
-Upon seeing their proposal removed, a submitter who is not properly introduced to the democracy
-system of Polkadot might be tempted to re-submit the same proposal. That said, this is far from a
-fool-proof method of preventing invalid proposals from being submitted - a single changed character
-in a proposal's text will also change the hash of the proposal, rendering the per-hash blacklist
-invalid.
+Khi thấy đề xuất của họ bị xóa, một người gửi không được giới thiệu đúng cách với hệ thống dân chủ
+của Polkadot có thể bị cám dỗ để gửi lại đề xuất tương tự. Điều đó nói rằng, đây không phải là một
+phương pháp chống đánh lừa để ngăn chặn các đề xuất không hợp lệ được gửi - một ký tự được thay đổi
+duy nhất trong văn bản của đề xuất cũng sẽ thay đổi hàm băm của đề xuất, khiến danh sách đen của mỗi
+hàm băm không hợp lệ.
 
 ### How to be a council member?
 
