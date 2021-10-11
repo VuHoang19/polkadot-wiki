@@ -329,29 +329,31 @@ phương pháp chống đánh lừa để ngăn chặn các đề xuất không 
 duy nhất trong văn bản của đề xuất cũng sẽ thay đổi hàm băm của đề xuất, khiến danh sách đen của mỗi
 hàm băm không hợp lệ.
 
-### How to be a council member?
+### Làm thế nào để trở thành một thành viên hội đồng?
 
 ![](../assets/governance/approval-vote.png)
 
-All stakeholders are free to signal their approval of any of the registered candidates.
+Tất cả các bên liên quan có thể tự do báo hiệu sự chấp thuận của họ đối với bất kỳ ứng viên nào đã
+đăng ký.
 
-Council elections are handled by the same [Phragmén election](learn-phragmen.md) process that
-selects validators from the available pool based on nominations. However, token holders' votes for
-councillors are isolated from any of the nominations they may have on validators. Council terms last
-for one day on Kusama and one week on Polkadot.
+Các cuộc bầu cử hội đồng được xử lý bằng cùng một quy trình bầu cử
+[Phragmén election](learn-phragmen.md) chọn những người xác thực từ nhóm có sẵn dựa trên các đề cử.
+Tuy nhiên, phiếu bầu của chủ sở hữu token cho các ủy viên hội đồng được tách biệt khỏi bất kỳ đề cử
+nào mà họ có thể có đối với người xác thực. Các nhiệm kỳ của hội đồng kéo dài trong một ngày trên
+Kusama và một tuần trên Polkadot..
 
-At the end of each term, [Phragmén election algorithm](learn-phragmen.md) runs and the result will
-choose the new councillors based on the vote configurations of all voters. The election also chooses
-a set number of runners up (currently 19 on Kusama and 20 on Polkadot) that will remain in the queue
-with their votes intact.
+Vào cuối mỗi nhiệm kỳ, [Phragmén election algorithm](learn-phragmen.md) sẽ chạy và kết quả sẽ chọn
+các ủy viên hội đồng mới dựa trên cấu hình phiếu bầu của tất cả các cử tri. Cuộc bầu cử cũng chọn
+một số ứng cử viên nhất định (hiện tại là 19 người ở Kusama và 20 người ở Polkadot) sẽ vẫn còn trong
+hàng đợi với phiếu bầu của họ còn nguyên vẹn.
 
-As opposed to a "first-past-the-post" electoral system, where voters can only vote for a single
-candidate from a list, a Phragmén election is a more expressive way to include each voters' views.
-Token holders can treat it as a way to support as many candidates as they want. The election
-algorithm will find a fair subset of the candidates that most closely matches the expressed
-indications of the electorate as a whole.
+Trái ngược với hệ thống bầu cử "trước sau như một", nơi cử tri chỉ có thể bỏ phiếu cho một ứng cử
+viên duy nhất từ ​​danh sách, cuộc bầu cử Phragmén là một cách biểu đạt hơn để bao gồm quan điểm của
+từng cử tri. Người nắm giữ mã thông báo có thể coi đó là một cách để hỗ trợ bao nhiêu ứng cử viên
+tùy thích. Thuật toán bầu cử sẽ tìm ra một tập hợp con hợp lý của các ứng cử viên phù hợp nhất với
+các dấu hiệu được thể hiện của toàn bộ cử tri nói chung.
 
-Let's take a look at the example below.
+Hãy xem ví dụ dưới đây.
 
 |      Round 1      |     |                |     |     |     |
 | :---------------: | :-: | :------------: | :-: | :-: | :-: |
@@ -363,8 +365,8 @@ Let's take a look at the example below.
 |      Kelvin       |  X  |                |  X  |     |     |
 |     **Total**     |  2  |       1        |  3  |  2  |  2  |
 
-The above example shows that candidate C wins the election in round 1, while candidates A, B, D & E
-keep remaining on the candidates' list for the next round.
+Ví dụ trên cho thấy ứng cử viên C thắng cử ở vòng 1, trong khi ứng viên A, B, D & E tiếp tục ở lại
+trong danh sách ứng cử viên cho vòng tiếp theo.
 
 |      Round 2      |     |                |     |     |
 | :---------------: | :-: | :------------: | :-: | :-: |
@@ -376,76 +378,72 @@ keep remaining on the candidates' list for the next round.
 |      Kelvin       |  X  |       X        |     |     |
 |     **Total**     |  4  |       4        |  1  |  1  |
 
-For the top-N (say 4 in this example) runners-up, they can remain and their votes persist until the
-next election. After round 2, even though candidates A & B get the same number of votes in this
-round, candidate A gets elected because after adding the older unused approvals, it is higher than
-B.
+Đối với người đứng đầu N (ví dụ như 4 trong ví dụ này), họ có thể ở lại và số phiếu của họ vẫn tồn
+tại cho đến cuộc bầu cử tiếp theo. Sau vòng 2, mặc dù các ứng cử viên A & B nhận được cùng số phiếu
+trong vòng này, ứng viên A được bầu vì sau khi thêm các phê duyệt cũ hơn chưa được sử dụng, nó cao
+hơn B.
 
-### Prime Members
+### Thành viên chính
 
-The council, being an instantiation of
+Hội đồng, là một mô tả của
 [Substrate's Collective pallet](https://github.com/paritytech/substrate/tree/master/frame/collective),
-implements what's called a _prime member_ whose vote acts as the default for other members that fail
-to vote before the timeout.
+thực hiện cái được gọi là thành viên chính mà phiếu bầu đóng vai trò là mặc định cho các thành viên
+khác không bỏ phiếu trước thời gian chờ.
 
-The prime member is chosen based on a [Borda count](https://en.wikipedia.org/wiki/Borda_count).
+Thành viên chính được chọn dựa trên [Borda count](https://en.wikipedia.org/wiki/Borda_count).
 
-The purpose of having a prime member of the council is to ensure a quorum, even when several members
-abstain from a vote. Council members might be tempted to vote a "soft rejection" or a "soft
-approval" by not voting and letting the others vote. With the existence of a prime member, it forces
-councillors to be explicit in their votes or have their vote counted for whatever is voted on by the
-prime.
+Mục đích của việc có một thành viên chính của hội đồng là để đảm bảo có đủ túc số, ngay cả khi một
+số thành viên bỏ phiếu trắng. bỏ phiếu. Với sự tồn tại của một thành viên chính, nó buộc các ủy viên
+hội đồng phải rõ ràng trong các phiếu bầu của họ hoặc phải kiểm phiếu của họ cho bất cứ điều gì được
+bỏ phiếu bởi nguyên thủ.
 
-## Technical Committee
+## Hội đồng kỹ thuật
 
-The Technical Committee was introduced in the
-[Kusama rollout and governance post](https://polkadot.network/kusama-rollout-and-governance/) as one
-of the three chambers of Kusama governance (along with the Council and the Referendum chamber). The
-Technical Committee is composed of the teams that have successfully implemented or specified either
-a Polkadot/Kusama runtime or Polkadot Host. Teams are added or removed from the Technical Committee
-via a simple majority vote of the [Council](#council).
+Ủy ban kỹ thuật được giới thiệu trong
+[Kusama rollout and governance post](https://polkadot.network/kusama-rollout-and-governance/) với tư
+cách là một trong ba phòng quản trị Kusama (cùng với Hội đồng và phòng trưng cầu dân ý). Ủy ban kỹ
+thuật bao gồm các nhóm đã triển khai thành công hoặc chỉ định Polkadot / Thời gian chạy Kusama hoặc
+Máy chủ Polkadot. Các đội được thêm hoặc xóa khỏi Ủy ban kỹ thuật thông qua đa số phiếu đơn giản của
+[Hội đồng](#council).
 
-The Technical Committee can, along with the Council, produce emergency referenda, which are
-fast-tracked for voting and implementation. These are used for emergency bug fixes or rapid
-implementation of new but battle-tested features into the runtime.
+Ủy ban kỹ thuật có thể cùng với Hội đồng đưa ra chương trình trưng cầu khẩn cấp, được theo dõi nhanh
+để bỏ phiếu và triển khai. Các chương trình này được sử dụng để sửa lỗi khẩn cấp hoặc triển khai
+nhanh các tính năng mới nhưng đã được thử nghiệm trong thời gian chạy.
 
-Fast-tracked referenda are the only type of referenda that can be active alongside another active
-referendum. Thus, with fast-tracked referenda it is possible to have two active referendums at the
-same time. Voting on one does not prevent a user from voting on the other.
+Cuộc trưng cầu được theo dõi nhanh là loại cuộc trưng cầu duy nhất có thể hoạt động cùng với cuộc
+trưng cầu đang hoạt động khác. Do đó, với cuộc trưng cầu được theo dõi nhanh, có thể có hai cuộc
+trưng cầu đang hoạt động cùng một lúc. Việc bỏ phiếu cho một cuộc không ngăn cản người dùng bỏ phiếu
+ở bên khác.
 
-## Frequently Asked Questions
+## Các câu hỏi thường gặp
 
-### How can I appeal to the council to enact a change on my behalf?
+### Làm cách nào để tôi có thể khiếu nại với hội đồng để thay mặt tôi ban hành một thay đổi?
 
-In some circumstances, you may want to appeal to the on-chain council to enact a change on your
-behalf. One example of this circumstance is the case of lost or locked funds when the funds were
-lost due to a human interface error (such as inputting an address for another network). Another
-example is if you participated in the 2017 Polkadot ICO with a multi-sig address which now does not
-let you sign a message easily. When these circumstances can be proven beyond a reasonable doubt to
-be an error, the council _may_ consider a governance motion to correct it.
+Trong một số trường hợp, bạn có thể muốn khiếu nại với hội đồng trực tuyến để thay mặt bạn thực hiện
+thay đổi. Một ví dụ về trường hợp này là trường hợp tiền bị mất hoặc bị khóa khi tiền bị mất do lỗi
+giao diện của con người (chẳng hạn như nhập địa chỉ cho một mạng khác). Một ví dụ khác là nếu bạn đã
+tham gia vào ICO Polkadot 2017 với địa chỉ nhiều chữ ký hiện không cho phép bạn ký thư dễ dàng. Khi
+những trường hợp này có thể được chứng minh là một lỗi hợp lý , hội đồng có thể xem xét một đề nghị
+quản trị để điều chỉnh nó.
 
-The first step to appeal to the council is to get in contact with the councillors. There is no
-singular place where you are guaranteed to grab every councillor's ear with your message. However,
-there are a handful of good places to start where you can get the attention of some of them. The
-[Polkadot Direction][] matrix room is one such place. After creating an account and joining this
-room, you can post a well-thought-through message here that lays down your case and provides
-justification for why you think the council should consider enacting a change to the protocol on
-your behalf.
+Bước đầu tiên để khiếu nại với hội đồng là liên hệ với các ủy viên hội đồng. Không có nơi nào hiếm
+hoi mà bạn được đảm bảo sẽ thu hút mọi người theo dõi thông điệp của bạn. Tuy nhiên, có một số nơi
+tốt để bạn có thể bắt đầu. sự chú ý của một số người trong số họ. Phòng ma trận [Polkadot
+Direction][] là một trong những nơi như vậy. Sau khi tạo tài khoản và tham gia phòng này, bạn có thể
+đăng một thông báo đã được cân nhắc kỹ lưỡng tại đây nêu rõ trường hợp của bạn và cung cấp lý do tại
+sao bạn nghĩ hội đồng nên thay mặt bạn xem xét ban hành một thay đổi đối với giao thức.
 
-At some point you will likely need a place for a longer-form discussion. For this, making a post on
-[Polkassembly][] is the recommended place to do so. When you write a post on Polkassembly make sure
-you present all the evidence for your circumstances and state clearly what kind of change you would
-suggest to the councillors to enact. Remember - the councillors do not need to make the change, it
-is your responsibility to make a strong case for why the change should be made.
+Tại một số thời điểm, bạn có thể sẽ cần một nơi để thảo luận dài hơn. Đối với điều này, bạn nên đăng
+một bài trên [Polkassembly][]. Khi bạn viết một bài trên Polkassembly, hãy đảm bảo rằng bạn trình
+bày tất cả bằng chứng về hoàn cảnh của mình và nêu rõ loại thay đổi mà bạn sẽ đề xuất với các ủy
+viên hội đồng để ban hành. Hãy nhớ rằng các ủy viên hội đồng không cần phải thực hiện thay đổi, bạn
+có trách nhiệm đưa ra một trường hợp rõ ràng về lý do tại sao nên thực hiện thay đổi.
 
-## Resources
+## Tài liệu
 
 - [Initial Governance Description](https://github.com/paritytech/polkadot/wiki/Governance)
 - [Democracy Pallet](https://github.com/paritytech/substrate/tree/master/frame/democracy/src)
-- [Governance Demo](https://www.youtube.com/watch?v=VsZuDJMmVPY&feature=youtu.be&t=24734) - Dr.
-  Gavin Wood presents the initial governance structure for Polkadot. (Video)
-- [Governance on Polkadot](https://www.crowdcast.io/e/governance-on-polkadot--) - A webinar
-  explaining how governance works in Polkadot and Kusama.
-
+- [Governance Demo](https://www.youtube.com/watch?v=VsZuDJMmVPY&feature=youtu.be&t=24734) - Tiến sĩ Gavin Wood trình bày cấu trúc quản trị ban đầu cho Polkadot. (Video)
+- [Governance on Polkadot](https://www.crowdcast.io/e/governance-on-polkadot--) - Một hội thảo trên web giải thích cách thức hoạt động của quản trị ở Polkadot và Kusama.
 [polkadot direction]: https://matrix.to/#/!OwgojQyBzTlUQGGLhq:matrix.parity.io
 [polkassembly]: https://polkadot.polkassembly.io/
